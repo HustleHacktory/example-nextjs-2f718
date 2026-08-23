@@ -1,7 +1,7 @@
 "use client";
 
 import { useTheme } from "next-themes";
-import { forwardRef, useEffect, useState } from "react";
+import { type ComponentPropsWithoutRef, forwardRef } from "react";
 
 const darkVisualData = {
   sparkD:
@@ -13,37 +13,31 @@ const lightVisualData = {
     "M83.2638 53.3818C95.8768 56.6047 106.302 59.1883 128 64C106.302 68.8117 95.8768 71.3953 83.2638 74.6182C79.0197 75.7027 75.7024 79.0196 74.6177 83.2637C71.395 95.8731 68.8114 106.303 64 128C59.1886 106.303 56.605 95.8731 53.3823 83.2637C52.2976 79.0196 48.9803 75.7027 44.7362 74.6182C32.1232 71.3953 21.6984 68.8117 0 64C21.6984 59.1883 32.1232 56.6047 44.7362 53.3818C48.9803 52.2973 52.2976 48.9804 53.3823 44.7363C56.605 32.1269 59.1886 21.6973 64 0C68.8114 21.6973 71.395 32.1269 74.6177 44.7363C75.7024 48.9804 79.0197 52.2973 83.2638 53.3818Z",
 };
 
-interface Props {
-  className?: string;
-}
+export type Props = ComponentPropsWithoutRef<"svg">;
 
-const LogoMarkSpark = forwardRef((props: Props, ref) => {
-  const theme = useTheme();
+const LogoMarkSpark = forwardRef<SVGSVGElement, Props>(
+  ({ className = "", ...props }, ref) => {
+    const { resolvedTheme } = useTheme();
 
-  const [visualData, setVisualData] = useState<
-    typeof darkVisualData | typeof lightVisualData
-  >(darkVisualData);
+    // Derive visualData directly during render instead of storing derived state in useState
+    // and updating it via useEffect on mount, eliminating an extra cascading re-render pass.
+    const visualData =
+      resolvedTheme === "light" ? lightVisualData : darkVisualData;
 
-  useEffect(() => {
-    if (theme.resolvedTheme && theme.resolvedTheme == "light")
-      setVisualData(lightVisualData);
-    else setVisualData(darkVisualData);
-  }, [theme.resolvedTheme, setVisualData]);
+    const cls = `brand brand-logo-mark-spark ${className}`.trim();
 
-  let cls = "brand brand-logo-mark-spark";
-  cls += " " + props.className;
-
-  return (
-    <svg viewBox="0 0 128 128" className={cls}>
-      <path
-        d={visualData.sparkD}
-        fillRule="evenodd"
-        clipRule="evenodd"
-        fill="currentColor"
-      />
-    </svg>
-  );
-});
+    return (
+      <svg ref={ref} viewBox="0 0 128 128" className={cls} {...props}>
+        <path
+          d={visualData.sparkD}
+          fillRule="evenodd"
+          clipRule="evenodd"
+          fill="currentColor"
+        />
+      </svg>
+    );
+  },
+);
 LogoMarkSpark.displayName = "LogoMarkSpark";
 
 export default LogoMarkSpark;
