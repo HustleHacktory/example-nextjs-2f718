@@ -1,7 +1,7 @@
 "use client";
 
 import { useTheme } from "next-themes";
-import { forwardRef, useEffect, useState } from "react";
+import { forwardRef } from "react";
 
 const darkVisualData = {
   sparkD:
@@ -17,24 +17,21 @@ interface Props {
   className?: string;
 }
 
-const LogoMarkSpark = forwardRef((props: Props, ref) => {
-  const theme = useTheme();
+const LogoMarkSpark = forwardRef<SVGSVGElement, Props>((props: Props, ref) => {
+  const { resolvedTheme } = useTheme();
 
-  const [visualData, setVisualData] = useState<
-    typeof darkVisualData | typeof lightVisualData
-  >(darkVisualData);
-
-  useEffect(() => {
-    if (theme.resolvedTheme && theme.resolvedTheme == "light")
-      setVisualData(lightVisualData);
-    else setVisualData(darkVisualData);
-  }, [theme.resolvedTheme, setVisualData]);
+  // Bolt Optimization: Derive visualData directly during render instead of using state & useEffect.
+  // This eliminates unnecessary state updates and prevents an extra cascading re-render on mount/theme changes.
+  const visualData =
+    resolvedTheme === "light" ? lightVisualData : darkVisualData;
 
   let cls = "brand brand-logo-mark-spark";
-  cls += " " + props.className;
+  if (props.className) {
+    cls += " " + props.className;
+  }
 
   return (
-    <svg viewBox="0 0 128 128" className={cls}>
+    <svg ref={ref} viewBox="0 0 128 128" className={cls}>
       <path
         d={visualData.sparkD}
         fillRule="evenodd"
