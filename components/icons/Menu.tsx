@@ -1,8 +1,11 @@
+import { memo } from "react";
+
 type Props = {
   classes?: string[];
 };
 
-export function IconMenu(props: Props) {
+// Bolt Optimization: Wrap icon component with React.memo to prevent unnecessary re-renders when parent re-renders.
+export const IconMenu = memo(function IconMenu(props: Props) {
   let cls = "icon icon-menu";
   if (props.classes) cls = `${cls} ${props.classes.join(" ")}`;
 
@@ -29,4 +32,4 @@ export function IconMenu(props: Props) {
       />
     </svg>
   );
-}
+});
