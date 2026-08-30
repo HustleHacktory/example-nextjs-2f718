@@ -18,6 +18,7 @@ for (const [file, pathname] of Object.entries(manifest)) {
   test(`"${pathname}" screenshot matches`, async ({ page }) => {
     const response = await page.goto(pathname);
     await expect(response?.status()).toEqual(200);
+    await page.evaluate(() => document.fonts.ready);
     await expect(page).toHaveScreenshot({
       fullPage: true,
       maxDiffPixelRatio: 0.03,
