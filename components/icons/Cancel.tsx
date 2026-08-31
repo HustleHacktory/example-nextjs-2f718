@@ -1,10 +1,24 @@
+import { memo } from "react";
+
 type Props = {
   classes?: string[];
 };
 
-export function IconCancel(props: Props) {
-  let cls = "icon icon-cancel";
-  if (props.classes) cls += " " + props.classes.join(" ");
+function arePropsEqual(prevProps: Props, nextProps: Props) {
+  if (prevProps.classes === nextProps.classes) return true;
+  if (!prevProps.classes || !nextProps.classes)
+    return prevProps.classes === nextProps.classes;
+  if (prevProps.classes.length !== nextProps.classes.length) return false;
+  return prevProps.classes.every(
+    (val, index) => val === nextProps.classes![index],
+  );
+}
+
+// Bolt Optimization: Memoize IconCancel with custom prop comparison to prevent unnecessary re-renders even when parent components pass inline array literals for classes.
+export const IconCancel = memo(function IconCancel({ classes }: Props) {
+  const cls = classes?.length
+    ? `icon icon-cancel ${classes.join(" ")}`
+    : "icon icon-cancel";
 
   return (
     <svg viewBox="0 0 128 128" className={cls} stroke="currentColor">
@@ -17,4 +31,4 @@ export function IconCancel(props: Props) {
       />
     </svg>
   );
-}
+}, arePropsEqual);

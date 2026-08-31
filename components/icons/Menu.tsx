@@ -1,10 +1,24 @@
+import { memo } from "react";
+
 type Props = {
   classes?: string[];
 };
 
-export function IconMenu(props: Props) {
-  let cls = "icon icon-menu";
-  if (props.classes) cls = `${cls} ${props.classes.join(" ")}`;
+function arePropsEqual(prevProps: Props, nextProps: Props) {
+  if (prevProps.classes === nextProps.classes) return true;
+  if (!prevProps.classes || !nextProps.classes)
+    return prevProps.classes === nextProps.classes;
+  if (prevProps.classes.length !== nextProps.classes.length) return false;
+  return prevProps.classes.every(
+    (val, index) => val === nextProps.classes![index],
+  );
+}
+
+// Bolt Optimization: Memoize IconMenu with custom prop comparison to prevent unnecessary re-renders even when parent components pass inline array literals for classes.
+export const IconMenu = memo(function IconMenu({ classes }: Props) {
+  const cls = classes?.length
+    ? `icon icon-menu ${classes.join(" ")}`
+    : "icon icon-menu";
 
   return (
     <svg viewBox="0 0 128 128" className={cls} stroke="currentColor">
@@ -29,4 +43,4 @@ export function IconMenu(props: Props) {
       />
     </svg>
   );
-}
+}, arePropsEqual);
