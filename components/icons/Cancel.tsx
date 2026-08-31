@@ -1,8 +1,11 @@
+import { memo } from "react";
+
 type Props = {
   classes?: string[];
 };
 
-export function IconCancel(props: Props) {
+// Bolt Optimization: Wrap icon component with React.memo to prevent unnecessary re-renders when parent re-renders.
+export const IconCancel = memo(function IconCancel(props: Props) {
   let cls = "icon icon-cancel";
   if (props.classes) cls += " " + props.classes.join(" ");
 
@@ -17,4 +20,4 @@ export function IconCancel(props: Props) {
       />
     </svg>
   );
-}
+});
