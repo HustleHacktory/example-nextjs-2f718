@@ -7,3 +7,8 @@
 
 **Learning:** Calling `arcjet.withRule(...)` inside dynamic route handlers creates new Arcjet rule instances and client clones on every incoming HTTP request.
 **Action:** Pre-instantiate static Arcjet rule clients at module scope outside handler functions and select the pre-instantiated client at request time.
+
+## 2026-08-22 - Pre-instantiating Zod form resolvers vs per-render instantiation
+
+**Learning:** Instantiating `zodResolver(schema)` inside React client form components creates new resolver closures on every render pass, causing unnecessary allocations and unstable resolver references in `useForm`.
+**Action:** Pre-instantiate static `zodResolver(schema)` instances at module scope outside component render bodies.

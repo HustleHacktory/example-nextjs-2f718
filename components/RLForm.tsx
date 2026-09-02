@@ -6,13 +6,17 @@ import { useForm } from "react-hook-form";
 import { z } from "zod";
 import { emptyFormSchema } from "@/app/signup/schema";
 
+// Bolt Optimization: Pre-instantiate Zod resolver at module scope to avoid
+// recreating the resolver closure on every render pass and maintain stable reference.
+const resolver = zodResolver(emptyFormSchema);
+
 export function RLForm() {
   // Use state to persist latest error message even across form submissions.
   const [errorMessage, setErrorMessage] = useState<string | null>(null);
 
   // Set up the form with the Zod schema and a resolver.
   const form = useForm<z.infer<typeof emptyFormSchema>>({
-    resolver: zodResolver(emptyFormSchema),
+    resolver,
   });
 
   // Define a submit handler called when the form is submitted. It sends the
