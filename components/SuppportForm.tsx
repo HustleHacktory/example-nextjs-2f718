@@ -6,13 +6,17 @@ import { useForm } from "react-hook-form";
 import { z } from "zod";
 import { formSchema } from "@/app/sensitive-info/schema";
 
+// Bolt Optimization: Pre-instantiate Zod resolver at module scope to avoid
+// recreating the resolver closure on every render pass and maintain stable reference.
+const resolver = zodResolver(formSchema);
+
 export function SupportForm() {
   // Used to navigate to the welcome page after a successful form submission.
   const router = useRouter();
 
   // Set up the form with the Zod schema and a resolver.
   const form = useForm<z.infer<typeof formSchema>>({
-    resolver: zodResolver(formSchema),
+    resolver,
     defaultValues: {
       supportMessage:
         "I ordered a hat from your store and would like to request a refund. My credit card number is 4111111111111111 ",

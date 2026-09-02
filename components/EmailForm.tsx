@@ -6,6 +6,10 @@ import { useForm } from "react-hook-form";
 import { z } from "zod";
 import { formSchema } from "@/app/signup/schema";
 
+// Bolt Optimization: Pre-instantiate Zod resolver at module scope to avoid
+// recreating the resolver closure on every render pass and maintain stable reference.
+const resolver = zodResolver(formSchema);
+
 export function EmailForm() {
   // Allows us to set an error message on the form.
   const {
@@ -15,7 +19,7 @@ export function EmailForm() {
     clearErrors,
     formState: { errors, isSubmitting },
   } = useForm<z.infer<typeof formSchema>>({
-    resolver: zodResolver(formSchema),
+    resolver,
     defaultValues: {
       email: "nonexistent@arcjet.ai",
     },
