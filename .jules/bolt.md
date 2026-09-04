@@ -12,3 +12,8 @@
 
 **Learning:** Instantiating `zodResolver(schema)` inside React client form components creates new resolver closures on every render pass, causing unnecessary allocations and unstable resolver references in `useForm`.
 **Action:** Pre-instantiate static `zodResolver(schema)` instances at module scope outside component render bodies.
+
+## 2026-09-04 - Static className props and memoization for icon components vs inline array props
+
+**Learning:** Passing inline array literals (`classes={["..."]}`) to unmemoized SVG icon components causes array allocations per render, string joining overhead (`.join(" ")`), and breaks referential equality, forcing icons to re-render whenever parent layouts update.
+**Action:** Support string `className` props on SVG icon components, wrap them with `React.memo`, and pass static string class names from parent components.
