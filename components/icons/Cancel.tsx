@@ -1,9 +1,15 @@
+import { memo } from "react";
+
 type Props = {
   classes?: string[];
+  className?: string;
 };
 
-export function IconCancel(props: Props) {
+// Bolt Optimization: Wrap IconCancel in React.memo and support className string
+// to avoid inline array allocations and redundant re-renders.
+export const IconCancel = memo(function IconCancel(props: Props) {
   let cls = "icon icon-cancel";
+  if (props.className) cls += " " + props.className;
   if (props.classes) cls += " " + props.classes.join(" ");
 
   return (
@@ -17,4 +23,4 @@ export function IconCancel(props: Props) {
       />
     </svg>
   );
-}
+});

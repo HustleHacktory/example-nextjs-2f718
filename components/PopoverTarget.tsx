@@ -1,6 +1,6 @@
 "use client";
 
-import { type ComponentProps, useEffect, useRef } from "react";
+import { type ComponentProps, memo, useEffect, useRef } from "react";
 
 const POLYFILL_APPLIED: unique symbol = Symbol.for(
   "@oddbird/css-anchor-positioning",
@@ -24,8 +24,10 @@ type Props = {
   closeAtWidthPx: number;
 } & ComponentProps<"nav">;
 
-export function PopoverTarget({
-  closeAtWidthPx: closeAtWidthPx,
+// Bolt Optimization: Wrap PopoverTarget in React.memo to prevent unnecessary re-renders
+// when parent layout updates but navigation popover props remain unchanged.
+export const PopoverTarget = memo(function PopoverTarget({
+  closeAtWidthPx,
   ...props
 }: Props) {
   const popover = useRef<HTMLDivElement>(null);
@@ -70,4 +72,4 @@ export function PopoverTarget({
   }, []);
 
   return <nav ref={popover} popover="auto" {...props} />;
-}
+});
