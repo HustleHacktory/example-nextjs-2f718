@@ -9,11 +9,15 @@ export const metadata: Metadata = {
   description: "An example of Arcjet's bot protection for Next.js.",
 };
 
+// Bolt Optimization: Pre-instantiate static regular expression at module scope to avoid
+// re-compiling the regex and creating match array allocations on every request.
+const LOCALHOST_REGEX = /^(localhost|127.0.0.1):\d+$/;
+
 export default async function IndexPage() {
   const siteKey = process.env.ARCJET_SITE ? process.env.ARCJET_SITE : null;
   const headersList = await headers();
   const hostname = headersList.get("host") || "example.arcjet.com"; // Default to hosted example if undefined
-  const protocol = hostname?.match(/^(localhost|127.0.0.1):\d+$/)
+  const protocol = LOCALHOST_REGEX.test(hostname)
     ? "http"
     : "https";
 

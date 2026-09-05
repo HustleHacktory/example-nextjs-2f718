@@ -17,3 +17,8 @@
 
 **Learning:** Passing inline array literals (`classes={["..."]}`) to unmemoized SVG icon components causes array allocations per render, string joining overhead (`.join(" ")`), and breaks referential equality, forcing icons to re-render whenever parent layouts update.
 **Action:** Support string `className` props on SVG icon components, wrap them with `React.memo`, and pass static string class names from parent components.
+
+## 2026-09-05 - Static regular expressions and test() vs inline match() in server components
+
+**Learning:** Calling `hostname?.match(/.../)` inside Next.js Server Components / route handlers re-compiles regular expressions and allocates match result arrays on every incoming HTTP request.
+**Action:** Pre-instantiate static RegExp instances at module scope outside component render bodies or route handlers, and use `RegExp.prototype.test()` instead of `match()` for boolean checks.
