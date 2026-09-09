@@ -1,7 +1,7 @@
 "use client";
 
 import { zodResolver } from "@hookform/resolvers/zod";
-import { useState } from "react";
+import { memo, useState } from "react";
 import { useForm } from "react-hook-form";
 import { z } from "zod";
 import { emptyFormSchema } from "@/app/signup/schema";
@@ -10,7 +10,9 @@ import { emptyFormSchema } from "@/app/signup/schema";
 // recreating the resolver closure on every render pass and maintain stable reference.
 const resolver = zodResolver(emptyFormSchema);
 
-export function RLForm() {
+// Bolt Optimization: Wrap RLForm with React.memo to prevent unnecessary re-renders
+// when parent components or layout state change.
+export const RLForm = memo(function RLForm() {
   // Use state to persist latest error message even across form submissions.
   const [errorMessage, setErrorMessage] = useState<string | null>(null);
 
@@ -48,4 +50,4 @@ export function RLForm() {
       {errorMessage && <code>{errorMessage}</code>}
     </>
   );
-}
+});

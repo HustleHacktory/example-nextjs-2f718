@@ -2,6 +2,7 @@
 
 import { zodResolver } from "@hookform/resolvers/zod";
 import { useRouter } from "next/navigation";
+import { memo } from "react";
 import { useForm } from "react-hook-form";
 import { z } from "zod";
 import { formSchema } from "@/app/sensitive-info/schema";
@@ -10,7 +11,9 @@ import { formSchema } from "@/app/sensitive-info/schema";
 // recreating the resolver closure on every render pass and maintain stable reference.
 const resolver = zodResolver(formSchema);
 
-export function SupportForm() {
+// Bolt Optimization: Wrap SupportForm with React.memo to prevent unnecessary re-renders
+// when parent components or layout state change.
+export const SupportForm = memo(function SupportForm() {
   // Used to navigate to the welcome page after a successful form submission.
   const router = useRouter();
 
@@ -77,4 +80,4 @@ export function SupportForm() {
       </button>
     </form>
   );
-}
+});
