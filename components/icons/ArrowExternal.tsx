@@ -2,16 +2,24 @@ import { forwardRef, memo } from "react";
 
 interface Props {
   classes?: string[];
-  className?: string;
 }
 
-// Bolt Optimization: Wrap ArrowExternal in React.memo and support className string
-// to avoid inline array allocations and redundant re-renders.
+function arePropsEqual(prevProps: Props, nextProps: Props) {
+  if (prevProps.classes === nextProps.classes) return true;
+  if (!prevProps.classes || !nextProps.classes)
+    return prevProps.classes === nextProps.classes;
+  if (prevProps.classes.length !== nextProps.classes.length) return false;
+  return prevProps.classes.every(
+    (val, index) => val === nextProps.classes![index],
+  );
+}
+
+// Bolt Optimization: Memoize IconArrowExternal with custom prop comparison to prevent unnecessary re-renders even when parent components pass inline array literals for classes.
 const ArrowExternal = memo(
-  forwardRef<SVGSVGElement, Props>((props: Props, ref) => {
-    let cls = "icon icon-arrow-external";
-    if (props.className) cls += " " + props.className;
-    if (props.classes) cls += " " + props.classes.join(" ");
+  forwardRef<SVGSVGElement, Props>(({ classes }: Props, ref) => {
+    const cls = classes?.length
+      ? `icon icon-arrow-external ${classes.join(" ")}`
+      : "icon icon-arrow-external";
 
     return (
       <svg ref={ref} viewBox="0 0 128 128" className={cls}>
@@ -32,6 +40,7 @@ const ArrowExternal = memo(
       </svg>
     );
   }),
+  arePropsEqual,
 );
 ArrowExternal.displayName = "ArrowExternal";
 
