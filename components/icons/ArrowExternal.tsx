@@ -2,6 +2,7 @@ import { forwardRef, memo } from "react";
 
 interface Props {
   classes?: string[];
+  className?: string;
 }
 
 function arePropsEqual(prevProps: Props, nextProps: Props) {
@@ -40,7 +41,6 @@ const ArrowExternal = memo(
       </svg>
     );
   }),
-  arePropsEqual,
 );
 ArrowExternal.displayName = "ArrowExternal";
 

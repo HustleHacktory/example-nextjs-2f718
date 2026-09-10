@@ -28,7 +28,7 @@ const VisitDashboard = React.forwardRef<HTMLDivElement, Props>(
         >
           <LogoMarkSpark className="icon" />
           <span>Visit your site dashboard</span>
-          <IconArrowExternal classes={["icon"]} />
+          <IconArrowExternal className="icon" />
         </Link>
       </div>
     );

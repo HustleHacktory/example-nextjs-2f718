@@ -2,6 +2,7 @@ import { memo } from "react";
 
 type Props = {
   classes?: string[];
+  className?: string;
 };
 
 function arePropsEqual(prevProps: Props, nextProps: Props) {

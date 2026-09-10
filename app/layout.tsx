@@ -73,8 +73,8 @@ export default function RootLayout({ children }: Props) {
               popoverTarget="navigation"
               popoverTargetAction="toggle"
             >
-              <IconMenu classes={["hamburger-menu-menu-icon"]} />
-              <IconCancel classes={["hamburger-menu-cancel-icon"]} />
+              <IconMenu className="hamburger-menu-menu-icon" />
+              <IconCancel className="hamburger-menu-cancel-icon" />
             </button>
             <PopoverTarget id="navigation" closeAtWidthPx={1024}>
               <ul className="navigation-links">
