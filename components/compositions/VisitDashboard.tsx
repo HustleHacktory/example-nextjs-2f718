@@ -7,6 +7,14 @@ import IconArrowExternal from "@/components/icons/ArrowExternal";
 
 export interface Props extends React.HTMLAttributes<HTMLDivElement> {}
 
+// Bolt Optimization: Pre-instantiate static inline style object at module scope
+// to avoid object allocations on every render pass.
+const linkStyle: React.CSSProperties = {
+  display: "inline-flex",
+  alignItems: "center",
+  gap: "0.5rem",
+};
+
 const VisitDashboard = React.forwardRef<HTMLDivElement, Props>(
   ({ className, ...props }, ref) => {
     const { siteKey } = useSiteKey();
@@ -20,11 +28,7 @@ const VisitDashboard = React.forwardRef<HTMLDivElement, Props>(
           href={`https://app.arcjet.com/sites/${siteKey}`}
           target="arcjet-app"
           className="link"
-          style={{
-            display: "inline-flex",
-            alignItems: "center",
-            gap: "0.5rem",
-          }}
+          style={linkStyle}
         >
           <LogoMarkSpark className="icon" />
           <span>Visit your site dashboard</span>
