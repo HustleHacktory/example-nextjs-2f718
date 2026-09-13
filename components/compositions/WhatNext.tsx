@@ -1,10 +1,13 @@
 import Link from "next/link";
+import { memo } from "react";
 
 type Props = {
   deployed?: boolean;
 };
 
-export function WhatNext({ deployed }: Props) {
+// Bolt Optimization: Wrap WhatNext in React.memo to prevent unnecessary re-renders
+// when parent layout or page state updates but `deployed` prop remains unchanged.
+export const WhatNext = memo(function WhatNext({ deployed }: Props) {
   if (deployed) {
     return (
       <div className="section">
@@ -74,4 +77,5 @@ export function WhatNext({ deployed }: Props) {
       </div>
     </div>
   );
-}
+});
+WhatNext.displayName = "WhatNext";
