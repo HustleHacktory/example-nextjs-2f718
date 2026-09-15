@@ -12,33 +12,32 @@ export const dynamic = "force-dynamic";
 // Add rules to the base Arcjet instance outside of the handler function
 const aj = arcjet.withRule(
   // Shield detects suspicious behavior, such as SQL injection and cross-site
-  // scripting attacks. We want to run it on every request
+  // scripting attacks. We want to ru nit on every request
   shield({
     mode: "LIVE", // will block requests. Use "DRY_RUN" to log only
   }),
 );
 
-// Bolt Optimization: Pre-instantiate client instances outside of the handler function
-// to avoid recreating rule objects and Arcjet client instances on every request hit.
-const ajUser = aj.withRule(
-  fixedWindow({
-    mode: "LIVE",
-    max: 5,
-    window: "60s",
-  }),
-);
-
-const ajGuest = aj.withRule(
-  fixedWindow({
-    mode: "LIVE",
-    max: 2,
-    window: "60s",
-  }),
-);
-
-// Returns pre-instantiated rules depending on whether the session is present.
+// Returns ad-hoc rules depending on whether the session is present. You could
+// inspect more details about the session to dynamically adjust the rate limit.
 function getClient(session: Session | null) {
-  return session?.user ? ajUser : ajGuest;
+  if (session?.user) {
+    return aj.withRule(
+      fixedWindow({
+        mode: "LIVE",
+        max: 5,
+        window: "60s",
+      }),
+    );
+  } else {
+    return aj.withRule(
+      fixedWindow({
+        mode: "LIVE",
+        max: 2,
+        window: "60s",
+      }),
+    );
+  }
 }
 
 export async function POST(req: NextRequest) {
