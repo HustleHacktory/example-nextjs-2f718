@@ -10,6 +10,12 @@ import { formSchema } from "@/app/signup/schema";
 // recreating the resolver closure on every render pass and maintain stable reference.
 const resolver = zodResolver(formSchema);
 
+// Bolt Optimization: Pre-instantiate defaultValues at module scope to avoid
+// object allocations on every render pass and provide a stable reference to useForm.
+const defaultValues = {
+  email: "nonexistent@arcjet.ai",
+};
+
 export function EmailForm() {
   // Allows us to set an error message on the form.
   const {
@@ -20,9 +26,7 @@ export function EmailForm() {
     formState: { errors, isSubmitting },
   } = useForm<z.infer<typeof formSchema>>({
     resolver,
-    defaultValues: {
-      email: "nonexistent@arcjet.ai",
-    },
+    defaultValues,
   });
 
   // Used to navigate to the welcome page after a successful form submission.
