@@ -27,3 +27,8 @@
 
 **Learning:** Using `!isDevelopment(process.env)` instead of `isDevelopment(process.env)` in route handlers forces unnecessary `ip(req)` header parsing on local requests during development while hardcoding static local IPs in production.
 **Action:** Always check `isDevelopment(process.env) ? "127.0.0.1" : ip(req)` to bypass IP parsing in dev and accurately identify client IPs in production.
+
+## 2026-09-07 - Pre-instantiating defaultValues vs inline object literals in useForm
+
+**Learning:** Passing inline object literals for `defaultValues` inside React client form components allocates new objects on every render pass and breaks referential equality for `useForm` initial options.
+**Action:** Pre-instantiate static `defaultValues` objects at module scope outside component render bodies.
