@@ -27,3 +27,8 @@
 
 **Learning:** Using `!isDevelopment(process.env)` instead of `isDevelopment(process.env)` in route handlers forces unnecessary `ip(req)` header parsing on local requests during development while hardcoding static local IPs in production.
 **Action:** Always check `isDevelopment(process.env) ? "127.0.0.1" : ip(req)` to bypass IP parsing in dev and accurately identify client IPs in production.
+
+## 2026-09-07 - Pre-evaluating static environment variables at module scope vs per-render evaluation
+
+**Learning:** Reading `process.env` properties and evaluating conditional ternaries inside Next.js Server Component render functions triggers repeated property lookups on every request render pass.
+**Action:** Pre-evaluate static `process.env` values at module scope outside component bodies when the values are constant across requests.

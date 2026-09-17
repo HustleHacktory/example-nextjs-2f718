@@ -13,8 +13,11 @@ export const metadata: Metadata = {
 // re-compiling the regex and creating match array allocations on every request.
 const LOCALHOST_REGEX = /^(localhost|127.0.0.1):\d+$/;
 
+// Bolt Optimization: Pre-evaluate siteKey at module scope to avoid environment variable
+// read and ternary evaluation on every page render pass.
+const siteKey = process.env.ARCJET_SITE ? process.env.ARCJET_SITE : null;
+
 export default async function IndexPage() {
-  const siteKey = process.env.ARCJET_SITE ? process.env.ARCJET_SITE : null;
   const headersList = await headers();
   const hostname = headersList.get("host") || "example.arcjet.com"; // Default to hosted example if undefined
   const protocol = LOCALHOST_REGEX.test(hostname)

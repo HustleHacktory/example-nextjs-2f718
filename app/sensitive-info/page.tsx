@@ -10,9 +10,11 @@ export const metadata: Metadata = {
     "An example of Arcjet's sensitive info detection for Next.js. Detect credit card numbers and other PII with Next.js.",
 };
 
-export default function IndexPage() {
-  const siteKey = process.env.ARCJET_SITE ? process.env.ARCJET_SITE : null;
+// Bolt Optimization: Pre-evaluate siteKey at module scope to avoid environment variable
+// read and ternary evaluation on every page render pass.
+const siteKey = process.env.ARCJET_SITE ? process.env.ARCJET_SITE : null;
 
+export default function IndexPage() {
   return (
     <main className="page">
       <div className="section">
