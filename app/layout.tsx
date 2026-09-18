@@ -52,6 +52,7 @@ export default function RootLayout({ children }: Props) {
       <body className="layout">
         <header className="header">
           <Link href="/">
+            {/* Bolt Optimization: Add priority to above-the-fold header logo images to preload critical assets and optimize LCP */}
             <Image
               src={LogoLight}
               alt="Arcjet Example app"
