@@ -23,7 +23,7 @@
 **Learning:** Calling `hostname?.match(/.../)` inside Next.js Server Components / route handlers re-compiles regular expressions and allocates match result arrays on every incoming HTTP request.
 **Action:** Pre-instantiate static RegExp instances at module scope outside component render bodies or route handlers, and use `RegExp.prototype.test()` instead of `match()` for boolean checks.
 
-## 2026-09-06 - Inverted isDevelopment checks in IP resolution vs local fallback
+## 2026-09-06 - Preloading above-the-fold header logos with Next.js Image priority
 
-**Learning:** Using `!isDevelopment(process.env)` instead of `isDevelopment(process.env)` in route handlers forces unnecessary `ip(req)` header parsing on local requests during development while hardcoding static local IPs in production.
-**Action:** Always check `isDevelopment(process.env) ? "127.0.0.1" : ip(req)` to bypass IP parsing in dev and accurately identify client IPs in production.
+**Learning:** Omitting the `priority` prop on header logos and above-the-fold images causes Next.js `next/image` to default to lazy loading, delaying critical image resource fetches and degrading Largest Contentful Paint (LCP).
+**Action:** Add `priority` prop to `next/image` components rendered above the fold in shared root layouts to instruct Next.js to preload them.
