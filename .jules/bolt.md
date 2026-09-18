@@ -27,3 +27,8 @@
 
 **Learning:** Using `!isDevelopment(process.env)` instead of `isDevelopment(process.env)` in route handlers forces unnecessary `ip(req)` header parsing on local requests during development while hardcoding static local IPs in production.
 **Action:** Always check `isDevelopment(process.env) ? "127.0.0.1" : ip(req)` to bypass IP parsing in dev and accurately identify client IPs in production.
+
+## 2026-09-07 - React.memo and useCallback on leaf components and native elements
+
+**Learning:** Wrapping leaf React client components (that accept no props and are rendered inside Server Components) with `React.memo` or passing `useCallback` references to native DOM elements adds hook evaluation and comparison overhead without reducing re-renders.
+**Action:** Avoid applying `React.memo` or `useCallback` on leaf components or native elements unless an actual parent re-render bottleneck or expensive computation exists.
