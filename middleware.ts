@@ -43,4 +43,18 @@ const noseconeMiddleware = nosecone.createMiddleware(
     : noseconeConfig,
 );
 
+// Bolt Optimization: Export matcher config to bypass middleware for static assets,
+// image optimization requests, and favicons, reducing request latency for static resources.
+export const config = {
+  matcher: [
+    /*
+     * Match all request paths except for the ones starting with:
+     * - _next/static (static files)
+     * - _next/image (image optimization files)
+     * - favicon.ico, favicon.png, favicon-light.png (favicon and static icons)
+     */
+    "/((?!_next/static|_next/image|favicon\\.ico|favicon\\.png|favicon-light\\.png).*)",
+  ],
+};
+
 export default noseconeMiddleware;

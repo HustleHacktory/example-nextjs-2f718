@@ -32,3 +32,8 @@
 
 **Learning:** Wrapping leaf React client components (that accept no props and are rendered inside Server Components) with `React.memo` or passing `useCallback` references to native DOM elements adds hook evaluation and comparison overhead without reducing re-renders.
 **Action:** Avoid applying `React.memo` or `useCallback` on leaf components or native elements unless an actual parent re-render bottleneck or expensive computation exists.
+
+## 2026-09-08 - Unfiltered middleware execution vs matcher config for static assets
+
+**Learning:** Omitting the `config.matcher` export in Next.js `middleware.ts` forces middleware logic to execute on every request—including static JavaScript chunks, CSS files, images, and favicons—adding unnecessary processing overhead.
+**Action:** Export a `config` object with a `matcher` regex in `middleware.ts` to bypass middleware execution for static assets (`_next/static`, `_next/image`, favicons).
