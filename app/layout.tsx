@@ -43,10 +43,12 @@ export default function RootLayout({ children }: Props) {
   return (
     <html lang="en" suppressHydrationWarning>
       <head>
+        {/* Bolt Optimization: Defer non-critical third-party analytics script execution until browser idle time */}
+        {/* using strategy="lazyOnload" to prevent main thread blocking during hydration and critical rendering. */}
         <Script
-          defer
           src="https://plausible.io/js/script.js"
           data-domain="arcjet.com"
+          strategy="lazyOnload"
         />
       </head>
       <body className="layout">
