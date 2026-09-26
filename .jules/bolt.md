@@ -32,3 +32,8 @@
 
 **Learning:** Wrapping leaf React client components (that accept no props and are rendered inside Server Components) with `React.memo` or passing `useCallback` references to native DOM elements adds hook evaluation and comparison overhead without reducing re-renders.
 **Action:** Avoid applying `React.memo` or `useCallback` on leaf components or native elements unless an actual parent re-render bottleneck or expensive computation exists.
+
+## 2026-09-08 - Early request schema parsing with req.clone() vs security protection ordering
+
+**Learning:** Parsing and validating request bodies using `req.clone().json()` before calling `arcjet.protect(req)` introduces memory allocation overhead for stream cloning on every request and exposes the endpoint to rate limit/DoS bypass on malformed payloads.
+**Action:** Always run security middleware (`arcjet.protect(req)`) before reading or parsing the request body in route handlers.
