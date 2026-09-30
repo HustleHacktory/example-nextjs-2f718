@@ -52,8 +52,6 @@ const ajProtectedPOST = async (req: NextRequest) => {
 
 // You could also protect the GET handler, but these tend to be less sensitive
 // so it's not always necessary
-const GET = async (req: NextRequest) => {
-  return handlers.GET(req);
-};
-
-export { GET, ajProtectedPOST as POST };
+// Bolt Optimization: Export handlers.GET directly to avoid allocating an extra async wrapper function on every GET request.
+export const GET = handlers.GET;
+export { ajProtectedPOST as POST };
