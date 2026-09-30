@@ -44,3 +44,9 @@ const noseconeMiddleware = nosecone.createMiddleware(
 );
 
 export default noseconeMiddleware;
+
+// Bolt Optimization: Export matcher configuration to skip running security middleware
+// on static assets, optimized images, and favicons, eliminating redundant middleware executions per page load.
+export const config = {
+  matcher: ["/((?!_next/static|_next/image|favicon.png|favicon-light.png).*)"],
+};
