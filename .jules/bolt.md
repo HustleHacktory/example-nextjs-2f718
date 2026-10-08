@@ -32,3 +32,8 @@
 
 **Learning:** Wrapping leaf React client components (that accept no props and are rendered inside Server Components) with `React.memo` or passing `useCallback` references to native DOM elements adds hook evaluation and comparison overhead without reducing re-renders.
 **Action:** Avoid applying `React.memo` or `useCallback` on leaf components or native elements unless an actual parent re-render bottleneck or expensive computation exists.
+
+## 2026-10-08 - Running Arcjet protect before body parsing vs early body validation
+
+**Learning:** Parsing request bodies and running schema validation before calling `arcjet.protect(req)` exposes the application to DoS attacks by forcing stream parsing before rate limiting/firewall checks, while `req.clone()` introduces extra memory stream allocations per request.
+**Action:** Always execute Arcjet security rules (`arcjet.protect(req)`) before reading or parsing request body streams in API route handlers.
