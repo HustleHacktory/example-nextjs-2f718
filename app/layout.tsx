@@ -7,6 +7,7 @@ import LogoDark from "@/assets/logo-dark.svg";
 import LogoLight from "@/assets/logo-light.svg";
 import { siteConfig } from "@/config/site";
 
+import "@fontsource-variable/figtree";
 import "@/styles/styles.css";
 import { IconCancel } from "@/components/icons/Cancel";
 import { IconMenu } from "@/components/icons/Menu";
@@ -54,7 +55,8 @@ export default function RootLayout({ children }: Props) {
       <body className="layout">
         <header className="header">
           <Link href="/">
-            {/* Bolt Optimization: Add priority to above-the-fold header logo images to preload critical assets and optimize LCP */}
+            {/* Bolt Optimization: Add priority and unoptimized to static SVG logo images */}
+            {/* to bypass /_next/image server-side processing overhead and serve direct static assets */}
             <Image
               src={LogoLight}
               alt="Arcjet Example app"
@@ -62,6 +64,7 @@ export default function RootLayout({ children }: Props) {
               width={310}
               className="light"
               priority
+              unoptimized
             />
             <Image
               src={LogoDark}
@@ -70,6 +73,7 @@ export default function RootLayout({ children }: Props) {
               width={310}
               className="dark"
               priority
+              unoptimized
             />
           </Link>
           <div className="header-end">
