@@ -1,8 +1,9 @@
 import { WhatNext } from "@/components/compositions/WhatNext";
-import useSiteKey from "@/components/effects/useSiteKey";
 
 export default function IndexPage() {
-  const { siteKey } = useSiteKey();
+  // Bolt Optimization: Direct process.env lookup avoids importing and executing hook logic
+  // in a Next.js Server Component, matching the pattern used in other page components.
+  const siteKey = process.env.ARCJET_SITE ? process.env.ARCJET_SITE : null;
 
   return (
     <div className="page">

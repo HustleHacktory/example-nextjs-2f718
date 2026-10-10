@@ -27,29 +27,29 @@
     "test:run": "playwright test"
   },
   "dependencies": {
-    "@arcjet/decorate": "1.11.0",
-    "@arcjet/env": "1.11.0",
-    "@arcjet/ip": "1.11.0",
-    "@arcjet/next": "1.11.0",
+    "@arcjet/decorate": "1.14.0",
+    "@arcjet/env": "1.14.0",
+    "@arcjet/ip": "1.14.0",
+    "@arcjet/next": "1.14.0",
     "@fontsource-variable/figtree": "5.3.0",
     "@fontsource/ibm-plex-mono": "5.3.0",
     "@hookform/resolvers": "5.9.1",
-    "@nosecone/next": "1.11.0",
+    "@nosecone/next": "1.14.0",
     "@oddbird/css-anchor-positioning": "0.10.2",
-    "next": "16.3.4",
+    "next": "16.3.8",
     "next-auth": "5.0.0-beta.29",
     "next-themes": "0.4.6",
-    "react": "19.2.8",
-    "react-dom": "19.2.8",
-    "react-hook-form": "7.87.0",
-    "zod": "4.5.4"
+    "react": "19.3.0",
+    "react-dom": "19.3.0",
+    "react-hook-form": "7.89.0",
+    "zod": "4.6.5"
   },
   "devDependencies": {
-    "@playwright/test": "1.62.1",
+    "@playwright/test": "1.63.0",
     "@types/node": "22.16.3",
-    "@types/react": "19.2.18",
-    "@types/react-dom": "19.2.5",
-    "sass": "1.103.1",
-    "typescript": "5.7.3"
+    "@types/react": "19.3.0",
+    "@types/react-dom": "19.3.0",
+    "sass": "1.105.1",
+    "typescript": "7.0.2"
   }
 }
