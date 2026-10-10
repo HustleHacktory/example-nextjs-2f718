@@ -2,6 +2,7 @@ import { forwardRef, memo } from "react";
 
 interface Props {
   classes?: string[];
+  className?: string;
 }
 
 // Bolt Optimization: Wrap icon component with React.memo to prevent unnecessary re-renders when parent re-renders.

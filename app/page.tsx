@@ -58,13 +58,22 @@ export default function IndexPage() {
           <div className="section">
             <h2 className="heading-secondary">Deploy it now</h2>
             <div className="list-actions">
+              {/* Bolt Optimization: Add loading="lazy", decoding="async", and explicit layout dimensions */}
+              {/* to below-the-fold external deploy badges to defer image loading until visible and eliminate CLS. */}
               <a
                 href="https://vercel.com/new/clone?repository-url=https%3A%2F%2Fgithub.com%2Farcjet%2Fexample-nextjs&project-name=arcjet-example&repository-name=arcjet-example&developer-id=oac_1GEcKBuKBilVnjToj1QUwdb8&demo-title=Arcjet%20Example%20&demo-description=Example%20rate%20limiting%2C%20bot%20protection%2C%20email%20verification%20%26%20form%20protection.&demo-url=https%3A%2F%2Fgithub.com%2Farcjet%2Fexample-nextjs&demo-image=https%3A%2F%2Fapp.arcjet.com%2Fimg%2Fexample-apps%2Fvercel%2Fdemo-image.jpg&integration-ids=oac_1GEcKBuKBilVnjToj1QUwdb8&external-id=arcjet-js-example"
                 title="Deploy with Vercel"
                 target="_blank"
                 rel="noopener noreferrer"
               >
-                <img src="https://vercel.com/button" alt="Deploy with Vercel" />
+                <img
+                  src="https://vercel.com/button"
+                  alt="Deploy with Vercel"
+                  loading="lazy"
+                  decoding="async"
+                  width={92}
+                  height={32}
+                />
               </a>
               <a
                 href="https://app.netlify.com/start/deploy?repository=https://github.com/arcjet/example-nextjs"
@@ -75,6 +84,10 @@ export default function IndexPage() {
                 <img
                   src="https://www.netlify.com/img/deploy/button.svg"
                   alt="Deploy to Netlify"
+                  loading="lazy"
+                  decoding="async"
+                  width={114}
+                  height={32}
                 />
               </a>
             </div>

@@ -6,14 +6,19 @@ import appPathManifest from "../.next/app-path-routes-manifest.json";
 const manifest = appPathManifest as Record<string, string>;
 
 for (const [file, pathname] of Object.entries(manifest)) {
-  // Skip over dynamic and api routes
-  if (file.endsWith("/route") || file === "/_not-found/page") {
+  // Skip over dynamic, api, and error boundary routes
+  if (
+    file.endsWith("/route") ||
+    file === "/_not-found/page" ||
+    file === "/_global-error/page"
+  ) {
     continue;
   }
 
   test(`"${pathname}" screenshot matches`, async ({ page }) => {
     const response = await page.goto(pathname);
     await expect(response?.status()).toEqual(200);
+    await page.evaluate(() => document.fonts.ready);
     await expect(page).toHaveScreenshot({
       fullPage: true,
       maxDiffPixelRatio: 0.03,

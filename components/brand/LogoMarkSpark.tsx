@@ -46,4 +46,4 @@ const LogoMarkSpark = memo(
 );
 LogoMarkSpark.displayName = "LogoMarkSpark";
 
-export default LogoMarkSpark;
+export default memo(LogoMarkSpark);
