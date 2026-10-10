@@ -1,7 +1,7 @@
 "use client";
 
 import { useTheme } from "next-themes";
-import { forwardRef, memo } from "react";
+import { forwardRef } from "react";
 
 const darkVisualData = {
   sparkD:
@@ -43,4 +43,4 @@ const LogoMarkSpark = forwardRef<SVGSVGElement, Props>((props: Props, ref) => {
 });
 LogoMarkSpark.displayName = "LogoMarkSpark";
 
-export default memo(LogoMarkSpark);
+export default LogoMarkSpark;
