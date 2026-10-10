@@ -43,25 +43,21 @@ export default function RootLayout({ children }: Props) {
   return (
     <html lang="en" suppressHydrationWarning>
       <head>
-        {/* Bolt Optimization: Defer non-critical third-party analytics script execution until browser idle time */}
-        {/* using strategy="lazyOnload" to prevent main thread blocking during hydration and critical rendering. */}
         <Script
+          defer
           src="https://plausible.io/js/script.js"
           data-domain="arcjet.com"
-          strategy="lazyOnload"
         />
       </head>
       <body className="layout">
         <header className="header">
           <Link href="/">
-            {/* Bolt Optimization: Add priority to above-the-fold header logo images to preload critical assets and optimize LCP */}
             <Image
               src={LogoLight}
               alt="Arcjet Example app"
               height={30}
               width={310}
               className="light"
-              priority
             />
             <Image
               src={LogoDark}
@@ -69,7 +65,6 @@ export default function RootLayout({ children }: Props) {
               height={30}
               width={310}
               className="dark"
-              priority
             />
           </Link>
           <div className="header-end">
@@ -78,8 +73,8 @@ export default function RootLayout({ children }: Props) {
               popoverTarget="navigation"
               popoverTargetAction="toggle"
             >
-              <IconMenu className="hamburger-menu-menu-icon" />
-              <IconCancel className="hamburger-menu-cancel-icon" />
+              <IconMenu classes={["hamburger-menu-menu-icon"]} />
+              <IconCancel classes={["hamburger-menu-cancel-icon"]} />
             </button>
             <PopoverTarget id="navigation" closeAtWidthPx={1024}>
               <ul className="navigation-links">

@@ -1,12 +1,5 @@
 import { signIn } from "@/lib/auth";
 
-// Bolt Optimization: Hoist server action to module scope to avoid re-allocating
-// function closures on every component render pass.
-async function handleSignIn() {
-  "use server";
-  await signIn("github");
-}
-
 export function SignIn() {
   if (process.env.AUTH_GITHUB_ID === undefined) {
     return (
@@ -18,7 +11,13 @@ export function SignIn() {
   }
 
   return (
-    <form action={handleSignIn} className="form">
+    <form
+      action={async () => {
+        "use server";
+        await signIn("github");
+      }}
+      className="form"
+    >
       <p>Want to try a different rate limit?</p>
       <button type="submit" className="button-secondary">
         Sign in with GitHub

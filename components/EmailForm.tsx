@@ -6,14 +6,6 @@ import { useForm } from "react-hook-form";
 import { z } from "zod";
 import { formSchema } from "@/app/signup/schema";
 
-// Bolt Optimization: Pre-instantiate Zod resolver and defaultValues at module scope
-// to avoid recreating the resolver closure and default values object on every render pass,
-// maintaining stable references for react-hook-form.
-const resolver = zodResolver(formSchema);
-const defaultValues = {
-  email: "nonexistent@arcjet.ai",
-};
-
 export function EmailForm() {
   // Allows us to set an error message on the form.
   const {
@@ -23,8 +15,10 @@ export function EmailForm() {
     clearErrors,
     formState: { errors, isSubmitting },
   } = useForm<z.infer<typeof formSchema>>({
-    resolver,
-    defaultValues,
+    resolver: zodResolver(formSchema),
+    defaultValues: {
+      email: "nonexistent@arcjet.ai",
+    },
   });
 
   // Used to navigate to the welcome page after a successful form submission.
