@@ -35,5 +35,5 @@
 
 ## 2026-09-08 - Unfiltered middleware execution vs matcher config for static assets
 
-**Learning:** Omitting the `config.matcher` export in Next.js `middleware.ts` forces middleware logic to execute on every request—including static JavaScript chunks, CSS files, images, and favicons—adding unnecessary processing overhead.
-**Action:** Export a `config` object with a `matcher` regex in `middleware.ts` to bypass middleware execution for static assets (`_next/static`, `_next/image`, favicons).
+**Learning:** Omitting the `config.matcher` export in Next.js `proxy.ts` (formerly `middleware.ts`) forces middleware logic to execute on every request—including static JavaScript chunks, CSS files, images, and favicons—adding unnecessary processing overhead.
+**Action:** Export a `config` object with a `matcher` regex in `proxy.ts` to bypass middleware execution for static assets (`_next/static`, `_next/image`, favicons).

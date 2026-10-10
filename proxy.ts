@@ -58,12 +58,3 @@ export const config = {
 };
 
 export default noseconeMiddleware;
-
-// Bolt Optimization: Add middleware matcher config to skip executing security middleware
-// on static assets (_next/static, _next/image, favicons, static images). This reduces TTFB
-// and server CPU processing latency for static resource requests.
-export const config = {
-  matcher: [
-    "/((?!_next/static|_next/image|favicon.ico|.*\\.(?:svg|png|jpg|jpeg|gif|webp)$).*)",
-  ],
-};
