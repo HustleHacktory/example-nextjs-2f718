@@ -37,3 +37,8 @@
 
 **Learning:** Parsing request bodies and running schema validation before calling `arcjet.protect(req)` exposes the application to DoS attacks by forcing stream parsing before rate limiting/firewall checks, while `req.clone()` introduces extra memory stream allocations per request.
 **Action:** Always execute Arcjet security rules (`arcjet.protect(req)`) before reading or parsing request body streams in API route handlers.
+
+## 2026-10-10 - Unoptimized prop for static vector SVGs vs default /_next/image endpoint
+
+**Learning:** Using `next/image` on static vector SVG files routes requests through the `/_next/image` server-side processing endpoint without rendering benefits, adding server CPU and request latency overhead.
+**Action:** Always add the `unoptimized` prop to `<Image>` components rendering static SVG files to serve them directly as static CDN assets.

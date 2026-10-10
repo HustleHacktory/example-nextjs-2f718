@@ -3,7 +3,6 @@
 /* Next.js doesn't support import <url> @layer */
 /* See: https://github.com/vercel/next.js/issues/55763 */
 @import url("./reset.css");
-@import "@fontsource-variable/figtree";
 
 @property --palette-black {
   syntax: "<color>";
