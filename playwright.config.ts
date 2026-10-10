@@ -60,8 +60,7 @@ export default defineConfig({
     env: {
       ARCJET_ENV: "development",
       AUTH_SECRET: "playwright",
-      AUTH_TRUST_HOST: "true",
-      AUTH_URL: "http://127.0.0.1:4000",
+      AUTH_TRUST_HOST: "http://127.0.0.1:4000",
       AUTH_GITHUB_ID: "playwright",
       AUTH_GITHUB_SECRET: "playwright",
     },
