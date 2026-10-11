@@ -37,3 +37,8 @@
 
 **Learning:** Parsing request bodies and running schema validation before calling `arcjet.protect(req)` exposes the application to DoS attacks by forcing stream parsing before rate limiting/firewall checks, while `req.clone()` introduces extra memory stream allocations per request.
 **Action:** Always execute Arcjet security rules (`arcjet.protect(req)`) before reading or parsing request body streams in API route handlers.
+
+## 2026-10-09 - Fail-fast schema validation vs deferred Arcjet execution
+
+**Learning:** Deferring schema validation checks (`!data.success`) to execute async Arcjet protection calls first forces invalid request payloads to wait for async network/rule evaluation before returning 400 Bad Request, increasing latency on invalid request paths.
+**Action:** Maintain early exits/returns for synchronous input validation when schema parameters (e.g. email) are required for downstream rule evaluation, preserving the fail-fast pattern.
