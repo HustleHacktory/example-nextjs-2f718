@@ -37,3 +37,8 @@
 
 **Learning:** Parsing request bodies and running schema validation before calling `arcjet.protect(req)` exposes the application to DoS attacks by forcing stream parsing before rate limiting/firewall checks, while `req.clone()` introduces extra memory stream allocations per request.
 **Action:** Always execute Arcjet security rules (`arcjet.protect(req)`) before reading or parsing request body streams in API route handlers.
+
+## 2026-10-12 - Early decision denial checks before evaluating IP attributes
+
+**Learning:** Evaluating custom response logic (such as country or VPN checks) before `decision.isDenied()` forces unnecessary IP attribute lookups on blocked requests and creates potential security bypasses where denied bot/rate-limited requests return 200 OK responses.
+**Action:** Always check `decision.isDenied()` immediately after calling `arcjet.protect(req)` to allow blocked requests to exit early with 403/429 status codes before running optional IP location or VPN inspections.
