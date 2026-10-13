@@ -43,19 +43,24 @@ const aj = arcjet
   );
 
 export async function POST(req: NextRequest) {
-  const json = await req.json();
-  const data = formSchema.safeParse(json);
-
-  if (!data.success) {
-    const { error } = data;
-
-    return NextResponse.json(
-      { message: "invalid request", error },
-      { status: 400 },
-    );
+  // Bolt Optimization: Extract email safely from request body clone and run Arcjet security protection
+  // (rate limiting, bot detection, Shield, email validation) BEFORE running Zod schema validation.
+  // This prevents rate limit bypasses on invalid submissions, avoids unhandled JSON syntax errors,
+  // and short-circuits execution for blocked or rate-limited requests before schema processing.
+  let json: unknown;
+  try {
+    json = await req.clone().json();
+  } catch {
+    // If body is not valid JSON, email is undefined
   }
 
-  const { email } = data.data;
+  const email =
+    typeof json === "object" &&
+    json !== null &&
+    "email" in json &&
+    typeof (json as { email: unknown }).email === "string"
+      ? (json as { email: string }).email
+      : undefined;
 
   // Next.js 15 doesn't provide the IP address in the request object so we use
   // the Arcjet utility package to parse the headers and find it. If we're
@@ -147,6 +152,17 @@ export async function POST(req: NextRequest) {
         { status: 500 },
       );
     }
+  }
+
+  const data = formSchema.safeParse(json);
+
+  if (!data.success) {
+    const { error } = data;
+
+    return NextResponse.json(
+      { message: "invalid request", error },
+      { status: 400 },
+    );
   }
 
   return NextResponse.json({
