@@ -37,3 +37,8 @@
 
 **Learning:** Parsing request bodies and running schema validation before calling `arcjet.protect(req)` exposes the application to DoS attacks by forcing stream parsing before rate limiting/firewall checks, while `req.clone()` introduces extra memory stream allocations per request.
 **Action:** Always execute Arcjet security rules (`arcjet.protect(req)`) before reading or parsing request body streams in API route handlers.
+
+## 2026-11-12 - In-memory property reordering vs actual bottlenecks
+
+**Learning:** Reordering in-memory boolean property calls (such as `decision.ip.hasCountry()`) in route handlers is a micro-optimization with zero measurable performance impact and risks altering conditional response behavior.
+**Action:** Focus performance efforts on true performance bottlenecks (I/O, renders, allocations) and avoid micro-optimizing trivial in-memory getter calls.
