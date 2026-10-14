@@ -9,17 +9,17 @@ importers:
   .:
     dependencies:
       '@arcjet/decorate':
-        specifier: 1.14.0
-        version: 1.14.0
+        specifier: 1.14.1
+        version: 1.14.1
       '@arcjet/env':
-        specifier: 1.14.0
-        version: 1.14.0
+        specifier: 1.14.1
+        version: 1.14.1
       '@arcjet/ip':
-        specifier: 1.14.0
-        version: 1.14.0
+        specifier: 1.14.1
+        version: 1.14.1
       '@arcjet/next':
-        specifier: 1.14.0
-        version: 1.14.0(next@16.3.8(@playwright/test@1.63.0)(@types/node@22.16.3)(react-dom@19.3.0(react@19.3.0))(react@19.3.0)(sass@1.105.1))
+        specifier: 1.14.1
+        version: 1.14.1(next@16.4.0(@playwright/test@1.64.0)(@types/node@22.16.3)(react-dom@19.3.0(react@19.3.0))(react@19.3.0)(sass@1.105.1))
       '@fontsource-variable/figtree':
         specifier: 5.3.0
         version: 5.3.0
@@ -28,19 +28,19 @@ importers:
         version: 5.3.0
       '@hookform/resolvers':
         specifier: 5.9.1
-        version: 5.9.1(react-hook-form@7.89.0(@types/react@19.3.0)(react@19.3.0))(zod@4.6.5)
+        version: 5.9.1(react-hook-form@7.90.0(@types/react@19.3.0)(react@19.3.0))(zod@4.6.6)
       '@nosecone/next':
-        specifier: 1.14.0
-        version: 1.14.0(next@16.3.8(@playwright/test@1.63.0)(@types/node@22.16.3)(react-dom@19.3.0(react@19.3.0))(react@19.3.0)(sass@1.105.1))
+        specifier: 1.14.1
+        version: 1.14.1(next@16.4.0(@playwright/test@1.64.0)(@types/node@22.16.3)(react-dom@19.3.0(react@19.3.0))(react@19.3.0)(sass@1.105.1))
       '@oddbird/css-anchor-positioning':
         specifier: 0.10.2
         version: 0.10.2
       next:
-        specifier: 16.3.8
-        version: 16.3.8(@playwright/test@1.63.0)(@types/node@22.16.3)(react-dom@19.3.0(react@19.3.0))(react@19.3.0)(sass@1.105.1)
+        specifier: 16.4.0
+        version: 16.4.0(@playwright/test@1.64.0)(@types/node@22.16.3)(react-dom@19.3.0(react@19.3.0))(react@19.3.0)(sass@1.105.1)
       next-auth:
         specifier: 5.0.0-beta.29
-        version: 5.0.0-beta.29(next@16.3.8(@playwright/test@1.63.0)(@types/node@22.16.3)(react-dom@19.3.0(react@19.3.0))(react@19.3.0)(sass@1.105.1))(react@19.3.0)
+        version: 5.0.0-beta.29(next@16.4.0(@playwright/test@1.64.0)(@types/node@22.16.3)(react-dom@19.3.0(react@19.3.0))(react@19.3.0)(sass@1.105.1))(react@19.3.0)
       next-themes:
         specifier: 0.4.6
         version: 0.4.6(react-dom@19.3.0(react@19.3.0))(react@19.3.0)
@@ -51,15 +51,15 @@ importers:
         specifier: 19.3.0
         version: 19.3.0(react@19.3.0)
       react-hook-form:
-        specifier: 7.89.0
-        version: 7.89.0(@types/react@19.3.0)(react@19.3.0)
+        specifier: 7.90.0
+        version: 7.90.0(@types/react@19.3.0)(react@19.3.0)
       zod:
-        specifier: 4.6.5
-        version: 4.6.5
+        specifier: 4.6.6
+        version: 4.6.6
     devDependencies:
       '@playwright/test':
-        specifier: 1.63.0
-        version: 1.63.0
+        specifier: 1.64.0
+        version: 1.64.0
       '@types/node':
         specifier: 22.16.3
         version: 22.16.3
@@ -78,74 +78,74 @@ importers:
 
 packages:
 
-  '@arcjet/analyze-wasm@1.14.0':
-    resolution: {integrity: sha512-6I09klH7Ujpps1imI0BGi61klPxYrEK/MBRzxNiaRHt547URXC8SqyR0CRjl7R9Wde7u+8dAbuPmxOiDTyvwXA==}
+  '@arcjet/analyze-wasm@1.14.1':
+    resolution: {integrity: sha512-7HcQOaNlWty5iXR1aM18/afG8by8L7mt5BFe47liZPf9sIsAmQFiUsDyRVbkKzYca1TXHLm4QGGn1Ko+8G9cyQ==}
     engines: {node: '>=22.21.0 <23 || >=24.5.0'}
 
-  '@arcjet/analyze@1.14.0':
-    resolution: {integrity: sha512-2EblJj90Xh5w8J4d8mEFUPE2B/KjQboRP6bESpZKu9S0jYIL9HXLr8XSLUsLEMVye2sbEOpTlBTwxr9rYtinZQ==}
+  '@arcjet/analyze@1.14.1':
+    resolution: {integrity: sha512-/ifvV/anlvb0XjHP+P5FKm5XS1MQXFH3VWTe73wbOGh+lzD9CGGEiHCIMhCvlEnJmRwoRKpeT3OYh6pJMLn5BA==}
     engines: {node: '>=22.21.0 <23 || >=24.5.0'}
 
-  '@arcjet/body@1.14.0':
-    resolution: {integrity: sha512-DAbJnsR7nxyowESEOXFHOauEpcoM1eUx/9RbwCfgvx53lhbUxxmFa/2f7hJprNJ2MhhFHcjQV5F+M8/mZQwP7Q==}
+  '@arcjet/body@1.14.1':
+    resolution: {integrity: sha512-GocI9RCucdfsuDfoGvqVbIM1NVxj0w97zJLpWlxbgFcPFIrapQKhM3JF/nioy8IJrhlay0fbNOSnPff5TcQh0Q==}
     engines: {node: '>=22.21.0 <23 || >=24.5.0'}
 
-  '@arcjet/cache@1.14.0':
-    resolution: {integrity: sha512-5fULzozHw02VwujYi2h/WYV8AMat/lqzDtmCk1B4KYnIu71ydxIXtrSSA0LYkOeQy/nDLBqQV0lNl73PytB9wQ==}
+  '@arcjet/cache@1.14.1':
+    resolution: {integrity: sha512-lncLtwhRrH9LmXX/yRFa1TjJPN6MQKNW5JQPlr8Po7xwMojNmizOmp3SUYwRDTrXTxzxavB/L3S5jz381huQeQ==}
     engines: {node: '>=22.21.0 <23 || >=24.5.0'}
 
-  '@arcjet/decorate@1.14.0':
-    resolution: {integrity: sha512-7dqZTDtgzhh9afsUHGRCb+etTUR0S8Ya2wAX/xmPLRnZ2FeJDlZ8brxyOh/yARoH/yBj5VE+kLn/3fvvD7ijQQ==}
+  '@arcjet/decorate@1.14.1':
+    resolution: {integrity: sha512-I6DkTRj4IDdVsu66BHpbevyMHiIFiNXukQzpBpcSaIQmEjqm3ttwwwByWLUE+6ZChenMJzNmtswXqn8LTUPuZw==}
     engines: {node: '>=22.21.0 <23 || >=24.5.0'}
 
-  '@arcjet/duration@1.14.0':
-    resolution: {integrity: sha512-juj5ARh/sZZN6INo2PVhvCGA21wXW/oayMr/PtLoPBQBzEf2mJTArdX2QNgvtoddG41keGaHIJ+tMwMrU4pBRA==}
+  '@arcjet/duration@1.14.1':
+    resolution: {integrity: sha512-HbJMDjwY7vDdgFTiuPmI1LD/pst5IegCAbMtNqLTiAFpgJmtutt8gMUvfsoCdSad00eEfTfO4qIufp4M2zEhqw==}
     engines: {node: '>=22.21.0 <23 || >=24.5.0'}
 
-  '@arcjet/env@1.14.0':
-    resolution: {integrity: sha512-nMu4FpKk7k/WEj1gybKx+PkrOcln+TCt8trI0BE7VaZKYLscgA2WpiT9W80yyWFYI+r6qXoRxtRz51Q5siNw9w==}
+  '@arcjet/env@1.14.1':
+    resolution: {integrity: sha512-v8uvPl/FUNrtzQ+uhMomZIHhgsOVY4Bpn9xNgJ+/1Dhc9YaX+RrgAhtA/hbvEehWX21JrPkg3OYYNg5OyHxQbg==}
     engines: {node: '>=22.21.0 <23 || >=24.5.0'}
 
-  '@arcjet/headers@1.14.0':
-    resolution: {integrity: sha512-pmuFRJCfabpPvwSZneL+k68MD7JxtDl8iOwO75AmyrWYl6kcG+peXlUbq/2HkoSHlk0/zRzxF5PihLgaIzRinA==}
+  '@arcjet/headers@1.14.1':
+    resolution: {integrity: sha512-FdOnZQwI061i7iaALqc0G1dPIL40vy7PSFy1vh39KULOjQIGGlyRUFxsjTsEHEiSSE5/18aZ3FHTNa21TtvI0g==}
     engines: {node: '>=22.21.0 <23 || >=24.5.0'}
 
-  '@arcjet/ip@1.14.0':
-    resolution: {integrity: sha512-9aH6xcmwHGkujW/0GpxBea+3SoAM+pNtZObU9/1d1sWmeqW1uNP1EAxVoJsTc8NIwX8n2Tzff5JqrcOOWwKLbw==}
+  '@arcjet/ip@1.14.1':
+    resolution: {integrity: sha512-I9CsQHIpP1j/obDW4DLcNucJ+WKpqvlBIOjUxSgUVGq0G9wgP1qsO8ByPdCR3vWQtnQMJpGv4l6qhP3woOU9lQ==}
     engines: {node: '>=22.21.0 <23 || >=24.5.0'}
 
-  '@arcjet/logger@1.14.0':
-    resolution: {integrity: sha512-b9/AtGFUUPuXZWU33dXFgaXcpnh4NQWjWSVrjprEguHQ4jzIhxg4MUh/yrNjMmunJcjyuoPTNpr8R9uE7OZkLg==}
+  '@arcjet/logger@1.14.1':
+    resolution: {integrity: sha512-9xCRIkb+Ve/lqLThYl3LGhCHpz/W5L0OTRKvFgmecDscPD6r0XrqXyK4WwU+pCDVMJnIhsOQKUWulBQpHOsHDw==}
     engines: {node: '>=22.21.0 <23 || >=24.5.0'}
 
-  '@arcjet/next@1.14.0':
-    resolution: {integrity: sha512-4wRUmS3yKfrKujyzRNYVALVIDbBiZ6Lg190C500jvXDZ/O79OxVvWGoVchQJpL5pvPaFN+tzf9I+ZOCUXuBzzw==}
+  '@arcjet/next@1.14.1':
+    resolution: {integrity: sha512-KoDGqAnzsgZRoIcAYuO8+ytRK3rEGiJo+0n4e1bJsM8ZJdlMOnuwEj5nmkmx3pMwg64qIkjhKcomsavcOuYHZg==}
     engines: {node: '>=22.21.0 <23 || >=24.5.0'}
     peerDependencies:
       next: '>=13'
 
-  '@arcjet/protocol@1.14.0':
-    resolution: {integrity: sha512-T8qZes/icXKYM259uo1c2SQLut8a654oM+8pqipN0V5Hyc//4o0P49ElnsykQzvA33H1FSLsJoETuwg4GxWV9Q==}
+  '@arcjet/protocol@1.14.1':
+    resolution: {integrity: sha512-SvP37kfeXaSHIFkVU94tUstw5BcgIiQJXLu3QPFnc8e1yxfB1cvyMeTNNdO6ToAyxE4j+ecgg+0y/rTJqkrvkA==}
     engines: {node: '>=22.21.0 <23 || >=24.5.0'}
 
-  '@arcjet/runtime@1.14.0':
-    resolution: {integrity: sha512-sFe5ZkX/1FOgSgVKkJ+v7yYU+XeBcA9+STT1Dxg3awLpm6/ptIgdj65hQ66f/rRy5ahn5xmzhcw65S4Fy5ty7A==}
+  '@arcjet/runtime@1.14.1':
+    resolution: {integrity: sha512-G2hAfpPI68nzZQ/m1MWwiwE9cubgVGlgaIGNYvsaM3B9Bil/6SiSaovDlC9gYH4lspSX3v96mvBuNywC2/96rw==}
     engines: {node: '>=22.21.0 <23 || >=24.5.0'}
 
-  '@arcjet/skills@1.14.0':
-    resolution: {integrity: sha512-cPWW/MCJqxZwe58QpPsiulrwFbZYnwu8Q8jTYR9veDzrauBd60dNzOIW0nVt/nGX+QxKaF4zYGJ4OBOg81Y0Mw==}
+  '@arcjet/skills@1.14.1':
+    resolution: {integrity: sha512-tQgFwH1mfkyyIilch0h1kUn3l4oHb2OFbTQnD7qqx0lTYuEWPW8P9/TsKHr/f5bxeRodqNIQS1eM3bLhULNj4A==}
     engines: {node: '>=22.21.0 <23 || >=24.5.0'}
 
-  '@arcjet/sprintf@1.14.0':
-    resolution: {integrity: sha512-5SBn4k3VtfVsoXeUfrpdcZCU2+Po+ZoXpUe2QxKzxhmMe1zPRHm161AAzW4yafYqDkIiRe6E487QIlwN/7e9Gw==}
+  '@arcjet/sprintf@1.14.1':
+    resolution: {integrity: sha512-XKRvFwQfOny3XfQVHTiBf1ttMhMFYPIQAOHQsMtGLSub8npmhqrA6/w0Wq9NNbgXz9686YMJ7edvdhNXNgzhTg==}
     engines: {node: '>=22.21.0 <23 || >=24.5.0'}
 
-  '@arcjet/stable-hash@1.14.0':
-    resolution: {integrity: sha512-Pc8Uo77zMY411f7FlndwkIxRsfilXDqigFKc9P5aEMzFtVTdvzgk5jYCsid8eFItbgmEbtzPx5LviBUTfhIePA==}
+  '@arcjet/stable-hash@1.14.1':
+    resolution: {integrity: sha512-2TGK361o6JizaAKb60wu3FsXxdhYFeI4yoQX0xkz4Ux7rnUxGBLmeM8oL90WjOr0r9injmHCQOPndBO8LHhASQ==}
     engines: {node: '>=22.21.0 <23 || >=24.5.0'}
 
-  '@arcjet/transport@1.14.0':
-    resolution: {integrity: sha512-RaYeS+F2fZ2zMSNNNXQDsks7KOrleFhqKnN7atHCd3UKhw1g/0drU4c9yFKkRgM8gM8QCsx88Uci2H9WAYt6Ww==}
+  '@arcjet/transport@1.14.1':
+    resolution: {integrity: sha512-yLit6yx3TyX/9veislVYDZbxhI/1MahIH3Xc6ofDJHLDFgIAsHqdWOQaF+M8O5+wwbjWOZrHr2h8boxVptfafg==}
     engines: {node: '>=22.21.0 <23 || >=24.5.0'}
 
   '@auth/core@0.40.0':
@@ -441,63 +441,63 @@ packages:
     cpu: [x64]
     os: [win32]
 
-  '@next/env@16.3.8':
-    resolution: {integrity: sha512-Al9zqHVV7TJv0eFuOU4U7Lvv74PTih4Ch63sk2xCIpSTkE3udFnaOcnzP2lQVymiL7yS9Cj2iClUXlR3EQ5sEw==}
+  '@next/env@16.4.0':
+    resolution: {integrity: sha512-pyLlT5oafGlX8X7xjgGNXz5dNIDSxREm+qD6i9VLSZiZFopA/XWl8NM/KPmLx/8EG/++c49iid3gNWSQW1+2dQ==}
 
-  '@next/swc-darwin-arm64@16.3.8':
-    resolution: {integrity: sha512-2JPRMh2nmQG5CiL7cXGL9AGwnPWJQ//cTtAUCT+w511QHk79SYz3LGv/pc5X643B/WEO0rvu3Yww0hqwt3kgeA==}
+  '@next/swc-darwin-arm64@16.4.0':
+    resolution: {integrity: sha512-yyZ+9MgViAKLLb5l1gPBGjRwnq3teNLb5Zx6JEw8LzNSTjlsnp+baUHFxTgl7PpjCmKf48VQfyipG1eBflb48Q==}
     engines: {node: '>= 10'}
     cpu: [arm64]
     os: [darwin]
 
-  '@next/swc-darwin-x64@16.3.8':
-    resolution: {integrity: sha512-GZtCCOBKJ4leVIT/Th0llWKhD1ca92lzbQiS5R5ON9QkoiFnilFsebDae1JU2a3HWoKMEmEZWGs1AGLavVM72Q==}
+  '@next/swc-darwin-x64@16.4.0':
+    resolution: {integrity: sha512-RePEEejEj1Auf5s9qEcG0JbcDP3ceNUS/ofNX8AhxzgIjTVlZIHMatlp16YplcSMpsVo/ZMQHJTjbMYJznjGUg==}
     engines: {node: '>= 10'}
     cpu: [x64]
     os: [darwin]
 
-  '@next/swc-linux-arm64-gnu@16.3.8':
-    resolution: {integrity: sha512-O659ygeQYqneJ1fBKMpFxIFqYkYswu8IAS1OCKK/4f3ZgJJm1dRz4fVJZRi/kLLWjnBKnebOePA4WNv+sV1pVA==}
+  '@next/swc-linux-arm64-gnu@16.4.0':
+    resolution: {integrity: sha512-HhsyCqd+NpmvDDVY/LqkAN24f+QVvXh3ie+PfcwKinWL2Mu826JymQxJXGjAIfmJ4VlHjp4Pe/nZtXtUoEMAqw==}
     engines: {node: '>= 10'}
     cpu: [arm64]
     os: [linux]
     libc: [glibc]
 
-  '@next/swc-linux-arm64-musl@16.3.8':
-    resolution: {integrity: sha512-dSjKSyWpzxoO1d3DIZZcP4XJcNaKeLmxQMFOiYl5vuBRMmweIqnAhty8tAmRsvTss779cK1FtYnDMj40e4TQlg==}
+  '@next/swc-linux-arm64-musl@16.4.0':
+    resolution: {integrity: sha512-sN9Pf+Zh+RpZAOmbR7d8KAA8T61CVhawtbEJ2Bk6QrRzx6Z/6haaF4UiwBzytM96GRRRWZh9/WALIEO3npMamA==}
     engines: {node: '>= 10'}
     cpu: [arm64]
     os: [linux]
     libc: [musl]
 
-  '@next/swc-linux-x64-gnu@16.3.8':
-    resolution: {integrity: sha512-lbqOuz3RPRcv+o9msNsJw5x4+Y1ZwPTs6vmL6DCf7i0fZfvng/F59wyeDwqHIvV0mK//RBy/jJkZ+nCKsSMXjQ==}
+  '@next/swc-linux-x64-gnu@16.4.0':
+    resolution: {integrity: sha512-D5M5xLWQVd1CvR+L7BickM1weRfmM41x3L1NWcnKY/oyJJqr1qwaCgmu3dMAhLBOMdZwSuDCRV6DJRRpiUkbDQ==}
     engines: {node: '>= 10'}
     cpu: [x64]
     os: [linux]
     libc: [glibc]
 
-  '@next/swc-linux-x64-musl@16.3.8':
-    resolution: {integrity: sha512-+316WswI8ScVgZeUd+1KGaXkHhaYQzCjvH/05TZSpJ8zBizb1a4G7DtO7F12jcBIqMOtsz9ji1t48fmKtzqsGA==}
+  '@next/swc-linux-x64-musl@16.4.0':
+    resolution: {integrity: sha512-8d5WLS6a9YalqpOgXdlbvonFu+sIgjA+CO6tGzetrpPVcUL56foa7B7664h41rAlbLi5fJwK4vWji3zf4QDy+w==}
     engines: {node: '>= 10'}
     cpu: [x64]
     os: [linux]
     libc: [musl]
 
-  '@next/swc-win32-arm64-msvc@16.3.8':
-    resolution: {integrity: sha512-ji0gd4kMYUxO+1fJBIbiBVRCjzG/lloiyCccnlebvb1ZJ5qXCPZqYg4Jl1DrrixnWNMKylzgpmMWx0yNDYXlzw==}
+  '@next/swc-win32-arm64-msvc@16.4.0':
+    resolution: {integrity: sha512-sQuOIiW3snb48UwrBcDMvFA/u03qtw2LeuSIxFIQ9AJuW9UG/4Ddsfo+eV73PnZwBhyncMtsKVh7PrzMol2/fA==}
     engines: {node: '>= 10'}
     cpu: [arm64]
     os: [win32]
 
-  '@next/swc-win32-x64-msvc@16.3.8':
-    resolution: {integrity: sha512-WcTlaKt/TWkh5kUjdJcUmB1XgZ+1c6fz4Y9fDHL73YNSdGaUWjceeWrrlwF0nv19iABYWC4iAq1oX1w4Bn0vfg==}
+  '@next/swc-win32-x64-msvc@16.4.0':
+    resolution: {integrity: sha512-6/33lCuxpdHUy27RegyGM/5uTpF7YZd3UR4D0gpkOA/tWY5YR7msbQjqPgCZmSmxrrTLGCXYA4A8vT2H5DPGTQ==}
     engines: {node: '>= 10'}
     cpu: [x64]
     os: [win32]
 
-  '@nosecone/next@1.14.0':
-    resolution: {integrity: sha512-YWJwt+kWjz8EY45VHaOcchpbPnvoIVlhcRj2WUZdP4s7LXeSrRyTBeDzIYIqt05D7y92hdiUacGl7sRetSpYXA==}
+  '@nosecone/next@1.14.1':
+    resolution: {integrity: sha512-NxcYgIrhdmllnehmujaNxyNxfgzB+6FYAL5KiT12nPcmY6yLSVgdPhu9bccHCvX2BwLmRIVhV8tuAAhMXGAsjA==}
     engines: {node: '>=22.21.0 <23 || >=24.5.0'}
     peerDependencies:
       next: '>=14'
@@ -590,8 +590,8 @@ packages:
     resolution: {integrity: sha512-7FNeNl8NCE7aINx7WXiKQrPYZWC/hvrTsmk6zmxbI7LTXE7hVek/n8AfVgpe2y82zl3w0HvCHN0bVKMBoJcC0w==}
     engines: {node: '>= 10.0.0'}
 
-  '@playwright/test@1.63.0':
-    resolution: {integrity: sha512-oxMK4vllB9RK5NQ2l1pq1IfOf2AvnEuj/vYGDj0H2nMtmtZpKtCwt/l00GEO6xjGfpBNAvjovvYdCm50dRQkpQ==}
+  '@playwright/test@1.64.0':
+    resolution: {integrity: sha512-oTN9FNYuN6bqQMwiho6jJKLCG2/QOYCixGXuCjRmzOq23eODeukuY2XiAVoVpAECbuezMt1MHQjAiQxK8F+Y+g==}
     engines: {node: '>=20'}
     hasBin: true
 
@@ -735,8 +735,8 @@ packages:
     cpu: [x64]
     os: [win32]
 
-  arcjet@1.14.0:
-    resolution: {integrity: sha512-Aa/9ny9FV9KNa9/Gj41T8T0FyJ3r/0irocYsrEysyVrV7/BCzOjrmZD75XKU371au1Qf3CKXb/6T6IcMhyAm+g==}
+  arcjet@1.14.1:
+    resolution: {integrity: sha512-MDwQobCG93yp1AcSrcaeDPTVrPLcliQbeYMTKB3v8qMfIC9jjJkzf9ZTZClYLyS+h7NagAfCu1hbhwFxzxEaVA==}
     engines: {node: '>=22.21.0 <23 || >=24.5.0'}
 
   baseline-browser-mapping@2.11.25:
@@ -814,8 +814,8 @@ packages:
       react: ^16.8 || ^17 || ^18 || ^19 || ^19.0.0-rc
       react-dom: ^16.8 || ^17 || ^18 || ^19 || ^19.0.0-rc
 
-  next@16.3.8:
-    resolution: {integrity: sha512-U7QEZaTini6wKrb8A8hqLLqYQyCetegKjCpJOyxk642vWoMoU1x5PyZCJFvgYgiptA8xc5j/9xYlZFO7w9Sjmw==}
+  next@16.4.0:
+    resolution: {integrity: sha512-N2C+9q89Z/oLrsepSRS4jRMtwmUZAoZuAHU0e9T6+sAB5DdhADmrnOW+zjYijlrYFmVfmQhGVGy9eMFoB7UgKg==}
     engines: {node: '>=20.9.0'}
     hasBin: true
     peerDependencies:
@@ -838,8 +838,8 @@ packages:
   node-addon-api@7.1.1:
     resolution: {integrity: sha512-5m3bsyrjFWE1xf7nz7YXdN4udnVtXK6/Yfgn5qnahL6bCkf2yKt4k3nuTKAtT4r3IG8JNR2ncsIMdZuAzJjHQQ==}
 
-  nosecone@1.14.0:
-    resolution: {integrity: sha512-5PmfG77jb/zKrqkBevxHXbjwKcN2hDxY1uC/S6sQtPE+Ecq4MLwPxmV7XUQ6oc43sGdyERluu0ZXoqQPxeMJVg==}
+  nosecone@1.14.1:
+    resolution: {integrity: sha512-AGHVvr+iZsDR/fDPP8EQzX9S9J4dRAmO2wobkj8lkagzYVDFlxoPe9vmTv+R/N/9g94tyHUQNCMlTcdhJI+fHQ==}
     engines: {node: '>=22.21.0 <23 || >=24.5.0'}
 
   oauth4webapi@3.8.8:
@@ -852,13 +852,13 @@ packages:
     resolution: {integrity: sha512-qcJu88Q2IWqJsDD529JKMdwGm/dvInW4HvQnRwiH9JtihJvzGOscDtHE3x1pBKeUOTysQ8kVmLnJ2kJu7yhcGA==}
     engines: {node: '>=12'}
 
-  playwright-core@1.63.0:
-    resolution: {integrity: sha512-rYCsBF/M5HjUch52bbtVONEFjv6Xu8sm8h72dNlR5bzIE1fvC/bxgspzkjSfU+MweEMmPM8KJebG6nnyxo5mCg==}
+  playwright-core@1.64.0:
+    resolution: {integrity: sha512-T9r+MZkTECl2+oUcZ26YgZzTrYidTsIhYYkJix+6iDOymOb1FB2RLLSOxRGnZGv5DStt+aduIVbt+E8WygXYpg==}
     engines: {node: '>=20'}
     hasBin: true
 
-  playwright@1.63.0:
-    resolution: {integrity: sha512-+7ziBLidS4NaNCdt57SUDT+wYmmd5fmiQejUic/kb+YsYSCPyOOE9sebzMjNmQrsnNpDJqd4WHvV/8lfKfUDUg==}
+  playwright@1.64.0:
+    resolution: {integrity: sha512-kVzTnYFYEyQ9RGzBjNCd2+yEqWmVbxl3AHPynv3qQ6JTjv4a+kwRcnqQwIpuP3NnrnIrE/Q6wWAIAvMfIE2/Yg==}
     engines: {node: '>=20'}
     hasBin: true
 
@@ -879,8 +879,8 @@ packages:
     peerDependencies:
       react: ^19.3.0
 
-  react-hook-form@7.89.0:
-    resolution: {integrity: sha512-vKcoCfy8RKZDrhSdqsRFp0uEOdS1AhLjOL6hR7Wmfzg1akNxEhaPf5WORx8SgEQPVXakdDyDkqQp+KNxVnnPHg==}
+  react-hook-form@7.90.0:
+    resolution: {integrity: sha512-+NdG0FLzCPhFOp2NNxaUYLF9fyZhNjx9FTBBSYWF71/l6BBlmIc/j6xlp3DbaHWLJbIG7Zd8oznA19xJClU97w==}
     engines: {node: '>=18.0.0'}
     peerDependencies:
       '@types/react': '*'
@@ -947,69 +947,69 @@ packages:
   undici-types@6.21.0:
     resolution: {integrity: sha512-iwDZqg0QAGrg9Rav5H4n0M64c3mkR59cJ6wQp+7C4nI0gsmExaedaYLNO44eT4AtBBwjbTiGPMlt2Md0T9H9JQ==}
 
-  zod@4.6.5:
-    resolution: {integrity: sha512-v5l/aFXZQeai4awLbOpSoHecE9UiMrnfx75tEXLjNonXVARxQ5mOeipTjROUchszUNCqnE+hqAMujRsRHsut2Q==}
+  zod@4.6.6:
+    resolution: {integrity: sha512-4UmzQUF5fxvfcYHlbjBmejU+w+hbDnWFx4aS8kBx7nPBHcO2SqPbpAG8snbdg+Xse4pRefR98hgjFgIMCI/UhA==}
 
 snapshots:
 
-  '@arcjet/analyze-wasm@1.14.0': {}
+  '@arcjet/analyze-wasm@1.14.1': {}
 
-  '@arcjet/analyze@1.14.0':
+  '@arcjet/analyze@1.14.1':
     dependencies:
-      '@arcjet/analyze-wasm': 1.14.0
-      '@arcjet/protocol': 1.14.0
+      '@arcjet/analyze-wasm': 1.14.1
+      '@arcjet/protocol': 1.14.1
 
-  '@arcjet/body@1.14.0': {}
+  '@arcjet/body@1.14.1': {}
 
-  '@arcjet/cache@1.14.0': {}
+  '@arcjet/cache@1.14.1': {}
 
-  '@arcjet/decorate@1.14.0':
+  '@arcjet/decorate@1.14.1':
     dependencies:
-      '@arcjet/protocol': 1.14.0
-      '@arcjet/sprintf': 1.14.0
+      '@arcjet/protocol': 1.14.1
+      '@arcjet/sprintf': 1.14.1
 
-  '@arcjet/duration@1.14.0': {}
+  '@arcjet/duration@1.14.1': {}
 
-  '@arcjet/env@1.14.0': {}
+  '@arcjet/env@1.14.1': {}
 
-  '@arcjet/headers@1.14.0': {}
+  '@arcjet/headers@1.14.1': {}
 
-  '@arcjet/ip@1.14.0': {}
+  '@arcjet/ip@1.14.1': {}
 
-  '@arcjet/logger@1.14.0':
+  '@arcjet/logger@1.14.1':
     dependencies:
-      '@arcjet/sprintf': 1.14.0
+      '@arcjet/sprintf': 1.14.1
 
-  '@arcjet/next@1.14.0(next@16.3.8(@playwright/test@1.63.0)(@types/node@22.16.3)(react-dom@19.3.0(react@19.3.0))(react@19.3.0)(sass@1.105.1))':
+  '@arcjet/next@1.14.1(next@16.4.0(@playwright/test@1.64.0)(@types/node@22.16.3)(react-dom@19.3.0(react@19.3.0))(react@19.3.0)(sass@1.105.1))':
     dependencies:
-      '@arcjet/body': 1.14.0
-      '@arcjet/env': 1.14.0
-      '@arcjet/headers': 1.14.0
-      '@arcjet/ip': 1.14.0
-      '@arcjet/logger': 1.14.0
-      '@arcjet/protocol': 1.14.0
-      '@arcjet/transport': 1.14.0
-      arcjet: 1.14.0
-      next: 16.3.8(@playwright/test@1.63.0)(@types/node@22.16.3)(react-dom@19.3.0(react@19.3.0))(react@19.3.0)(sass@1.105.1)
+      '@arcjet/body': 1.14.1
+      '@arcjet/env': 1.14.1
+      '@arcjet/headers': 1.14.1
+      '@arcjet/ip': 1.14.1
+      '@arcjet/logger': 1.14.1
+      '@arcjet/protocol': 1.14.1
+      '@arcjet/transport': 1.14.1
+      arcjet: 1.14.1
+      next: 16.4.0(@playwright/test@1.64.0)(@types/node@22.16.3)(react-dom@19.3.0(react@19.3.0))(react@19.3.0)(sass@1.105.1)
 
-  '@arcjet/protocol@1.14.0':
+  '@arcjet/protocol@1.14.1':
     dependencies:
-      '@arcjet/cache': 1.14.0
+      '@arcjet/cache': 1.14.1
       '@bufbuild/protobuf': 2.15.0
       '@connectrpc/connect': 2.2.0(@bufbuild/protobuf@2.15.0)
 
-  '@arcjet/runtime@1.14.0': {}
+  '@arcjet/runtime@1.14.1': {}
 
-  '@arcjet/skills@1.14.0': {}
+  '@arcjet/skills@1.14.1': {}
 
-  '@arcjet/sprintf@1.14.0': {}
+  '@arcjet/sprintf@1.14.1': {}
 
-  '@arcjet/stable-hash@1.14.0': {}
+  '@arcjet/stable-hash@1.14.1': {}
 
-  '@arcjet/transport@1.14.0':
+  '@arcjet/transport@1.14.1':
     dependencies:
-      '@arcjet/env': 1.14.0
-      '@arcjet/logger': 1.14.0
+      '@arcjet/env': 1.14.1
+      '@arcjet/logger': 1.14.1
       '@bufbuild/protobuf': 2.15.0
       '@connectrpc/connect': 2.2.0(@bufbuild/protobuf@2.15.0)
       '@connectrpc/connect-node': 2.2.0(@bufbuild/protobuf@2.15.0)(@connectrpc/connect@2.2.0(@bufbuild/protobuf@2.15.0))
@@ -1059,12 +1059,12 @@ snapshots:
 
   '@fontsource/ibm-plex-mono@5.3.0': {}
 
-  '@hookform/resolvers@5.9.1(react-hook-form@7.89.0(@types/react@19.3.0)(react@19.3.0))(zod@4.6.5)':
+  '@hookform/resolvers@5.9.1(react-hook-form@7.90.0(@types/react@19.3.0)(react@19.3.0))(zod@4.6.6)':
     dependencies:
       '@standard-schema/utils': 0.3.0
-      react-hook-form: 7.89.0(@types/react@19.3.0)(react@19.3.0)
+      react-hook-form: 7.90.0(@types/react@19.3.0)(react@19.3.0)
     optionalDependencies:
-      zod: 4.6.5
+      zod: 4.6.6
 
   '@img/colour@1.1.0':
     optional: true
@@ -1173,36 +1173,36 @@ snapshots:
   '@img/sharp-win32-x64@0.35.4':
     optional: true
 
-  '@next/env@16.3.8': {}
+  '@next/env@16.4.0': {}
 
-  '@next/swc-darwin-arm64@16.3.8':
+  '@next/swc-darwin-arm64@16.4.0':
     optional: true
 
-  '@next/swc-darwin-x64@16.3.8':
+  '@next/swc-darwin-x64@16.4.0':
     optional: true
 
-  '@next/swc-linux-arm64-gnu@16.3.8':
+  '@next/swc-linux-arm64-gnu@16.4.0':
     optional: true
 
-  '@next/swc-linux-arm64-musl@16.3.8':
+  '@next/swc-linux-arm64-musl@16.4.0':
     optional: true
 
-  '@next/swc-linux-x64-gnu@16.3.8':
+  '@next/swc-linux-x64-gnu@16.4.0':
     optional: true
 
-  '@next/swc-linux-x64-musl@16.3.8':
+  '@next/swc-linux-x64-musl@16.4.0':
     optional: true
 
-  '@next/swc-win32-arm64-msvc@16.3.8':
+  '@next/swc-win32-arm64-msvc@16.4.0':
     optional: true
 
-  '@next/swc-win32-x64-msvc@16.3.8':
+  '@next/swc-win32-x64-msvc@16.4.0':
     optional: true
 
-  '@nosecone/next@1.14.0(next@16.3.8(@playwright/test@1.63.0)(@types/node@22.16.3)(react-dom@19.3.0(react@19.3.0))(react@19.3.0)(sass@1.105.1))':
+  '@nosecone/next@1.14.1(next@16.4.0(@playwright/test@1.64.0)(@types/node@22.16.3)(react-dom@19.3.0(react@19.3.0))(react@19.3.0)(sass@1.105.1))':
     dependencies:
-      next: 16.3.8(@playwright/test@1.63.0)(@types/node@22.16.3)(react-dom@19.3.0(react@19.3.0))(react@19.3.0)(sass@1.105.1)
-      nosecone: 1.14.0
+      next: 16.4.0(@playwright/test@1.64.0)(@types/node@22.16.3)(react-dom@19.3.0(react@19.3.0))(react@19.3.0)(sass@1.105.1)
+      nosecone: 1.14.1
 
   '@oddbird/css-anchor-positioning@0.10.2':
     dependencies:
@@ -1270,9 +1270,9 @@ snapshots:
       '@parcel/watcher-win32-x64': 2.6.0
     optional: true
 
-  '@playwright/test@1.63.0':
+  '@playwright/test@1.64.0':
     dependencies:
-      playwright: 1.63.0
+      playwright: 1.64.0
 
   '@standard-schema/utils@0.3.0': {}
 
@@ -1354,16 +1354,16 @@ snapshots:
   '@typescript/typescript-win32-x64@7.0.2':
     optional: true
 
-  arcjet@1.14.0:
+  arcjet@1.14.1:
     dependencies:
-      '@arcjet/analyze': 1.14.0
-      '@arcjet/cache': 1.14.0
-      '@arcjet/duration': 1.14.0
-      '@arcjet/headers': 1.14.0
-      '@arcjet/protocol': 1.14.0
-      '@arcjet/runtime': 1.14.0
-      '@arcjet/skills': 1.14.0
-      '@arcjet/stable-hash': 1.14.0
+      '@arcjet/analyze': 1.14.1
+      '@arcjet/cache': 1.14.1
+      '@arcjet/duration': 1.14.1
+      '@arcjet/headers': 1.14.1
+      '@arcjet/protocol': 1.14.1
+      '@arcjet/runtime': 1.14.1
+      '@arcjet/skills': 1.14.1
+      '@arcjet/stable-hash': 1.14.1
 
   baseline-browser-mapping@2.11.25: {}
 
@@ -1403,10 +1403,10 @@ snapshots:
 
   nanoid@6.0.1: {}
 
-  next-auth@5.0.0-beta.29(next@16.3.8(@playwright/test@1.63.0)(@types/node@22.16.3)(react-dom@19.3.0(react@19.3.0))(react@19.3.0)(sass@1.105.1))(react@19.3.0):
+  next-auth@5.0.0-beta.29(next@16.4.0(@playwright/test@1.64.0)(@types/node@22.16.3)(react-dom@19.3.0(react@19.3.0))(react@19.3.0)(sass@1.105.1))(react@19.3.0):
     dependencies:
       '@auth/core': 0.40.0
-      next: 16.3.8(@playwright/test@1.63.0)(@types/node@22.16.3)(react-dom@19.3.0(react@19.3.0))(react@19.3.0)(sass@1.105.1)
+      next: 16.4.0(@playwright/test@1.64.0)(@types/node@22.16.3)(react-dom@19.3.0(react@19.3.0))(react@19.3.0)(sass@1.105.1)
       react: 19.3.0
 
   next-themes@0.4.6(react-dom@19.3.0(react@19.3.0))(react@19.3.0):
@@ -1414,9 +1414,9 @@ snapshots:
       react: 19.3.0
       react-dom: 19.3.0(react@19.3.0)
 
-  next@16.3.8(@playwright/test@1.63.0)(@types/node@22.16.3)(react-dom@19.3.0(react@19.3.0))(react@19.3.0)(sass@1.105.1):
+  next@16.4.0(@playwright/test@1.64.0)(@types/node@22.16.3)(react-dom@19.3.0(react@19.3.0))(react@19.3.0)(sass@1.105.1):
     dependencies:
-      '@next/env': 16.3.8
+      '@next/env': 16.4.0
       '@swc/helpers': 0.5.23
       baseline-browser-mapping: 2.11.25
       caniuse-lite: 1.0.30001810
@@ -1425,15 +1425,15 @@ snapshots:
       react-dom: 19.3.0(react@19.3.0)
       styled-jsx: 5.1.6(react@19.3.0)
     optionalDependencies:
-      '@next/swc-darwin-arm64': 16.3.8
-      '@next/swc-darwin-x64': 16.3.8
-      '@next/swc-linux-arm64-gnu': 16.3.8
-      '@next/swc-linux-arm64-musl': 16.3.8
-      '@next/swc-linux-x64-gnu': 16.3.8
-      '@next/swc-linux-x64-musl': 16.3.8
-      '@next/swc-win32-arm64-msvc': 16.3.8
-      '@next/swc-win32-x64-msvc': 16.3.8
-      '@playwright/test': 1.63.0
+      '@next/swc-darwin-arm64': 16.4.0
+      '@next/swc-darwin-x64': 16.4.0
+      '@next/swc-linux-arm64-gnu': 16.4.0
+      '@next/swc-linux-arm64-musl': 16.4.0
+      '@next/swc-linux-x64-gnu': 16.4.0
+      '@next/swc-linux-x64-musl': 16.4.0
+      '@next/swc-win32-arm64-msvc': 16.4.0
+      '@next/swc-win32-x64-msvc': 16.4.0
+      '@playwright/test': 1.64.0
       sass: 1.105.1
       sharp: 0.35.4(@types/node@22.16.3)
     transitivePeerDependencies:
@@ -1444,7 +1444,7 @@ snapshots:
   node-addon-api@7.1.1:
     optional: true
 
-  nosecone@1.14.0: {}
+  nosecone@1.14.1: {}
 
   oauth4webapi@3.8.8: {}
 
@@ -1453,11 +1453,11 @@ snapshots:
   picomatch@4.0.7:
     optional: true
 
-  playwright-core@1.63.0: {}
+  playwright-core@1.64.0: {}
 
-  playwright@1.63.0:
+  playwright@1.64.0:
     dependencies:
-      playwright-core: 1.63.0
+      playwright-core: 1.64.0
 
   postcss@8.5.23:
     dependencies:
@@ -1476,7 +1476,7 @@ snapshots:
       react: 19.3.0
       scheduler: 0.28.0
 
-  react-hook-form@7.89.0(@types/react@19.3.0)(react@19.3.0):
+  react-hook-form@7.90.0(@types/react@19.3.0)(react@19.3.0):
     dependencies:
       react: 19.3.0
     optionalDependencies:
@@ -1567,4 +1567,4 @@ snapshots:
 
   undici-types@6.21.0: {}
 
-  zod@4.6.5: {}
+  zod@4.6.6: {}
