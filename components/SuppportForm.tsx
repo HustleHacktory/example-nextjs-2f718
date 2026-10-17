@@ -20,7 +20,15 @@ export function SupportForm() {
   const router = useRouter();
 
   // Set up the form with the Zod schema and a resolver.
-  const form = useForm<z.infer<typeof formSchema>>({
+  // Bolt Optimization: Destructure useForm state directly to prevent property
+  // accesses through object references and disable the submit button during submission
+  // to avoid duplicate concurrent in-flight requests.
+  const {
+    register,
+    handleSubmit,
+    setError,
+    formState: { errors, isSubmitting },
+  } = useForm<z.infer<typeof formSchema>>({
     resolver,
     defaultValues,
   });
@@ -46,36 +54,36 @@ export function SupportForm() {
       const error = await result.json();
       const errorMessage = error?.message || statusText;
 
-      form.setError("root.serverError", {
+      setError("root.serverError", {
         message: `We couldn't submit the form: ${errorMessage}`,
       });
     }
   }
 
   return (
-    <form onSubmit={form.handleSubmit(onSubmit)} className="form">
+    <form onSubmit={handleSubmit(onSubmit)} className="form">
       <div className="form-field">
         <label className="form-label">
           Message
           <textarea
             placeholder="Please enter your message."
             className="form-textarea"
-            {...form.register("supportMessage")}
+            {...register("supportMessage")}
           />
         </label>
-        {form.formState.errors.supportMessage && (
-          <div className="form-error">
-            {form.formState.errors.supportMessage.message}
-          </div>
+        {errors.supportMessage && (
+          <div className="form-error">{errors.supportMessage.message}</div>
         )}
-        {form.formState.errors.root?.serverError && (
-          <div className="form-error">
-            {form.formState.errors.root.serverError.message}
-          </div>
+        {errors.root?.serverError && (
+          <div className="form-error">{errors.root.serverError.message}</div>
         )}
       </div>
-      <button type="submit" className="button-primary form-button">
-        Submit
+      <button
+        type="submit"
+        className="button-primary form-button"
+        disabled={isSubmitting}
+      >
+        {isSubmitting ? "Submitting..." : "Submit"}
       </button>
     </form>
   );
