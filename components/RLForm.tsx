@@ -15,7 +15,13 @@ export function RLForm() {
   const [errorMessage, setErrorMessage] = useState<string | null>(null);
 
   // Set up the form with the Zod schema and a resolver.
-  const form = useForm<z.infer<typeof emptyFormSchema>>({
+  // Bolt Optimization: Destructure useForm state directly to avoid property
+  // accesses through object references and disable the submit button during submission
+  // to avoid duplicate concurrent in-flight requests.
+  const {
+    handleSubmit,
+    formState: { isSubmitting },
+  } = useForm<z.infer<typeof emptyFormSchema>>({
     resolver,
   });
 
@@ -40,9 +46,13 @@ export function RLForm() {
 
   return (
     <>
-      <form onSubmit={form.handleSubmit(onSubmit)} className="form">
-        <button type="submit" className="button-primary form-button">
-          Push me
+      <form onSubmit={handleSubmit(onSubmit)} className="form">
+        <button
+          type="submit"
+          className="button-primary form-button"
+          disabled={isSubmitting}
+        >
+          {isSubmitting ? "Submitting..." : "Push me"}
         </button>
       </form>
       {errorMessage && <code>{errorMessage}</code>}
