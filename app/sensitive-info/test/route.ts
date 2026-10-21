@@ -66,7 +66,19 @@ export async function POST(req: NextRequest) {
     }
   }
 
-  const json = await req.json();
+  // Bolt Optimization: Safely attempt JSON body parsing in a try...catch block
+  // to avoid uncaught SyntaxError exceptions on malformed JSON payloads, preventing
+  // unnecessary 500 error stack creation overhead.
+  let json: unknown;
+  try {
+    json = await req.json();
+  } catch {
+    return NextResponse.json(
+      { message: "invalid request" },
+      { status: 400 },
+    );
+  }
+
   const data = formSchema.safeParse(json);
 
   if (!data.success) {
