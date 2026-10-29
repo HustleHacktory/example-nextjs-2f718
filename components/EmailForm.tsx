@@ -2,6 +2,7 @@
 
 import { zodResolver } from "@hookform/resolvers/zod";
 import { useRouter } from "next/navigation";
+import { memo } from "react";
 import { useForm } from "react-hook-form";
 import { z } from "zod";
 import { formSchema } from "@/app/signup/schema";
@@ -14,7 +15,9 @@ const defaultValues = {
   email: "nonexistent@arcjet.ai",
 };
 
-export function EmailForm() {
+// Bolt Optimization: Wrap EmailForm with React.memo to prevent unnecessary re-renders
+// when parent components or layout state change.
+export const EmailForm = memo(function EmailForm() {
   // Allows us to set an error message on the form.
   const {
     register,
@@ -94,4 +97,4 @@ export function EmailForm() {
       </div>
     </form>
   );
-}
+});
