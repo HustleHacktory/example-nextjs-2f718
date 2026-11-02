@@ -37,3 +37,8 @@
 
 **Learning:** Parsing request bodies and running schema validation before calling `arcjet.protect(req)` exposes the application to DoS attacks by forcing stream parsing before rate limiting/firewall checks, while `req.clone()` introduces extra memory stream allocations per request.
 **Action:** Always execute Arcjet security rules (`arcjet.protect(req)`) before reading or parsing request body streams in API route handlers.
+
+## 2026-11-02 - Lazy IP resolution for authenticated requests vs eager header parsing
+
+**Learning:** Eagerly resolving client IP addresses via `ip(req)` before fingerprint fallback checks forces unnecessary HTTP header parsing, string allocations, and IP validation on requests from authenticated users whose session user ID already serves as the fingerprint.
+**Action:** Lazily resolve IP addresses with short-circuit evaluation (`session?.user?.id ?? (isDevelopment(process.env) ? "127.0.0.1" : ip(req))`) to bypass header parsing when an authenticated identifier is present.
