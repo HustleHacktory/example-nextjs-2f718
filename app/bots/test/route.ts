@@ -36,22 +36,17 @@ export async function GET(req: NextRequest) {
 
   console.log("Arcjet decision: ", decision);
 
-  // Use the IP analysis to customize the response based on the country
-  if (decision.ip.hasCountry() && decision.ip.country === "JP") {
-    return NextResponse.json({ message: "Konnichiwa!" });
-  }
-
-  // Always deny requests from VPNs
-  if (decision.ip.isVpn()) {
-    return NextResponse.json({ error: "VPNs are forbidden" }, { status: 403 });
-  }
-
-  // If the decision is denied, return an appropriate response. You can inspect
-  // the decision results to customize the response.
-  if (decision.isDenied() && decision.reason.isBot()) {
-    return NextResponse.json({ error: "Bots are forbidden" }, { status: 403 });
-  } else if (decision.isDenied() && decision.reason.isRateLimit()) {
-    return NextResponse.json({ error: "Too many requests" }, { status: 429 });
+  // Bolt Optimization: Evaluate decision.isDenied() immediately after calling aj.protect(req).
+  // This allows denied requests (bots or rate-limited clients) to exit early with status 403/429
+  // without executing unnecessary IP attribute lookups or risking logic bypasses.
+  if (decision.isDenied()) {
+    if (decision.reason.isBot()) {
+      return NextResponse.json({ error: "Bots are forbidden" }, { status: 403 });
+    } else if (decision.reason.isRateLimit()) {
+      return NextResponse.json({ error: "Too many requests" }, { status: 429 });
+    } else {
+      return NextResponse.json({ error: "Forbidden" }, { status: 403 });
+    }
   } else if (decision.isErrored()) {
     console.error("Arcjet error:", decision.reason);
     if (decision.reason.message === "[unauthenticated] invalid key") {
@@ -68,6 +63,16 @@ export async function GET(req: NextRequest) {
         { status: 500 },
       );
     }
+  }
+
+  // Always deny requests from VPNs
+  if (decision.ip.isVpn()) {
+    return NextResponse.json({ error: "VPNs are forbidden" }, { status: 403 });
+  }
+
+  // Use the IP analysis to customize the response based on the country
+  if (decision.ip.hasCountry() && decision.ip.country === "JP") {
+    return NextResponse.json({ message: "Konnichiwa!" });
   }
 
   return NextResponse.json({ message: "Hello world" });
