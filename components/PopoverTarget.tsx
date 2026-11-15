@@ -12,11 +12,21 @@ declare global {
   }
 }
 
+// Bolt Optimization: Set the global POLYFILL_APPLIED flag on window before initiating
+// dynamic import to ensure the guard condition correctly latches. This prevents redundant
+// dynamic chunk evaluations, repeated polyfill execution, and duplicate DOM MutationObserver
+// registrations in browsers lacking native CSS anchor positioning (such as Firefox and Safari).
 async function polyfillAnchorPositioning() {
-  const { default: polyfill } = await import(
-    "@oddbird/css-anchor-positioning/fn"
-  );
-  await polyfill(true);
+  window[POLYFILL_APPLIED] = true;
+  try {
+    const { default: polyfill } = await import(
+      "@oddbird/css-anchor-positioning/fn"
+    );
+    await polyfill(true);
+  } catch (error) {
+    window[POLYFILL_APPLIED] = false;
+    throw error;
+  }
 }
 
 type Props = {

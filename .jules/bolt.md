@@ -37,3 +37,8 @@
 
 **Learning:** Parsing request bodies and running schema validation before calling `arcjet.protect(req)` exposes the application to DoS attacks by forcing stream parsing before rate limiting/firewall checks, while `req.clone()` introduces extra memory stream allocations per request.
 **Action:** Always execute Arcjet security rules (`arcjet.protect(req)`) before reading or parsing request body streams in API route handlers.
+
+## 2026-11-01 - Setting global polyfill guard flags vs checking unset window properties
+
+**Learning:** Checking a custom global Symbol/flag on `window` to guard dynamic polyfill loading without setting the flag before asynchronous evaluation causes the guard condition to never latch, resulting in repeated chunk imports and duplicate DOM MutationObservers on re-mounts or in React Strict Mode.
+**Action:** Always set the global guard flag synchronously before triggering dynamic polyfill imports, resetting it only if the dynamic load fails.
